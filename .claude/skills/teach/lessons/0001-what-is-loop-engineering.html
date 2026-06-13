@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第一课：Loop Engineering 是什么？</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg: #faf9f7;
+    --text: #2c2c2c;
+    --accent: #c0392b;
+    --accent-light: #e74c3c;
+    --muted: #7f8c8d;
+    --border: #e0ddd8;
+    --highlight: #fdf2e9;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --code-bg: #f4f1ec;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.9;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .lesson-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .lesson-number {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+  }
+  .lesson-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  /* Epigraph */
+  .epigraph {
+    margin: 1.5rem 0 2rem;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid var(--accent);
+    background: var(--highlight);
+    font-family: 'Noto Serif SC', serif;
+    font-style: italic;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  .epigraph .attr {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  /* Sections */
+  h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+  }
+  h2::before {
+    content: '§';
+    color: var(--accent);
+    margin-right: 0.5rem;
+    font-weight: 300;
+  }
+
+  h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  p { margin-bottom: 1rem; }
+
+  /* Comparison table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.9rem;
+  }
+  th {
+    background: #2c2c2c;
+    color: white;
+    font-weight: 500;
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+  }
+  td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #f8f7f5; }
+
+  /* Key idea callout */
+  .key-idea {
+    background: var(--highlight);
+    border: 1px solid #f0d0b0;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .key-idea-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  /* Diagram */
+  .diagram {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    white-space: pre;
+    overflow-x: auto;
+    color: #333;
+  }
+
+  /* Guardrail cards */
+  .guardrail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .guardrail-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.85rem;
+    border-top: 3px solid var(--accent);
+  }
+  .guardrail-card .icon { font-size: 1.2rem; margin-bottom: 0.25rem; }
+  .guardrail-card .name { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem; }
+  .guardrail-card .desc { font-size: 0.82rem; color: #555; line-height: 1.5; }
+
+  /* Quiz */
+  .quiz {
+    background: #f0f4f8;
+    border: 2px solid #b0c4de;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .quiz-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  .quiz-question {
+    margin-bottom: 1.25rem;
+  }
+  .quiz-question p {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .quiz-options { list-style: none; }
+  .quiz-options li {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.35rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+  }
+  .quiz-options li:hover { background: var(--highlight); border-color: #f0d0b0; }
+  .quiz-options li.correct { background: #d5f5e3; border-color: var(--success); }
+  .quiz-options li.wrong { background: #fadbd8; border-color: var(--accent); }
+  .quiz-options li.reveal { opacity: 1; }
+
+  .quiz-feedback {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    display: none;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.correct { background: #d5f5e3; color: #1a5e2a; }
+  .quiz-feedback.wrong { background: #fadbd8; color: #7b241c; }
+
+  /* Citation */
+  .cite {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .cite a { color: var(--accent); text-decoration: none; }
+  .cite a:hover { text-decoration: underline; }
+
+  /* Footer */
+  .lesson-footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .next-step {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+  }
+  .next-step strong { color: var(--text); }
+
+  @media (max-width: 600px) {
+    .guardrail-grid { grid-template-columns: 1fr; }
+    body { padding: 1rem; }
+  }
+
+  @media print {
+    body { padding: 1rem; font-size: 11pt; }
+    .quiz-options li { cursor: default; }
+    .quiz-options li:hover { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lesson-header">
+  <div class="lesson-number">Loop Engineering · 第一课</div>
+  <div class="lesson-title">Loop Engineering 是什么？<br>从 Prompt 到 Loop 的范式转变</div>
+</div>
+
+<div class="epigraph">
+  "我不再 prompt Claude 了。我有循环在运行，它们来提示 Claude，来决定要做什么。我的工作是写循环。"
+  <span class="attr">— Boris Cherny，Claude Code 负责人，Anthropic</span>
+</div>
+
+<!-- ============================================ -->
+
+<h2>一句话定义</h2>
+
+<div class="key-idea">
+  <div class="key-idea-label">核心定义</div>
+  <p><b>Loop Engineering</b> 是设计和维护让 AI Agent 自动运行、自我检查、自我重试的循环系统的实践。你不再是"提示 Agent 的人"，而是"设计让 Agent 自动运作的系统的人"。</p>
+</div>
+
+<p>这个概念在 2026 年 6 月爆发，原因是 AI 编码工具的两位核心人物——Claude Code 的 Boris Cherny 和 OpenClaw 的 Peter Steinberger——几乎同时提出了同一个观点：<b>你不应该再手动 prompt 你的编码 Agent 了。</b></p>
+
+<!-- ============================================ -->
+
+<h2>一个直觉性的比喻</h2>
+
+<p>想象你是一位工厂经理：</p>
+
+<p><b>Prompt Engineering</b>（2023 年的模式）就像你站在流水线旁边，每完成一个步骤就亲手告诉工人"下一步做这个"。你必须在场，你必须不停地说话。</p>
+
+<p><b>Loop Engineering</b>（2026 年的模式）就像你设计了一条<b>自动流水线</b>——你设定好了原料入口（触发器）、质量检测门（可验证目标）、异常处理规则（护栏），然后你就可以回家了。流水线自己运行，自己检查，自己调整。</p>
+
+<p>关键区别：自动化流水线执行<b>固定步骤</b>；Loop 内部有一个<b>会思考和决策的 Agent</b>，它能判断"目标还没达成，我需要换个方法试试"。</p>
+
+<!-- ============================================ -->
+
+<h2>循环 vs 自动化：为什么不只是个高级 Cron Job？</h2>
+
+<p>这是最容易混淆的地方。一个 cron job 每小时运行一次——这不就是循环吗？</p>
+
+<table>
+  <tr>
+    <th></th>
+    <th>自动化 (Automation)</th>
+    <th>循环 (Loop)</th>
+  </tr>
+  <tr>
+    <td><b>做什么</b></td>
+    <td>执行固定脚本，步骤不变</td>
+    <td>Agent 评估当前状态，选择下一步行动</td>
+  </tr>
+  <tr>
+    <td><b>遇到错误</b></td>
+    <td>失败就停了</td>
+    <td>Agent 分析错误原因，调整策略重试</td>
+  </tr>
+  <tr>
+    <td><b>判断完成</b></td>
+    <td>脚本跑完就"完成"</td>
+    <td>Agent 主动检查目标是否达成</td>
+  </tr>
+  <tr>
+    <td><b>决策者</b></td>
+    <td>写脚本的<b>人</b></td>
+    <td>循环内的<b>Agent</b></td>
+  </tr>
+</table>
+
+<p class="cite">参考：<a href="https://www.louisbouchard.ai/loop-engineering/">Loop Engineering Explained — Louis-François Bouchard</a></p>
+
+<!-- ============================================ -->
+
+<h2>一个循环的内部结构</h2>
+
+<div class="diagram">┌──────────────────────────────────────────────────┐
+│  <b>触发器</b>: 每天早上 9 点 / PR 创建 / 手动启动      │
+│                      ↓                            │
+│  <b>可验证目标</b>: 所有测试通过，CI 绿灯，代码已提交    │
+│                      ↓                            │
+│  ┌─── 循环开始 ───────────────────────────────┐   │
+│  │                                             │   │
+│  │  1. <b>感知</b>  ← 读入当前状态、错误信息、工具结果 │   │
+│  │  2. <b>推理</b>  ← 分析：目标达成了吗？还差什么？  │   │
+│  │  3. <b>规划</b>  ← 决定下一步做什么             │   │
+│  │  4. <b>执行</b>  ← 写代码、跑测试、调工具         │   │
+│  │  5. <b>观察</b>  ← 接收结果，更新理解            │   │
+│  │         ↓                                    │   │
+│  │    目标达成了？                                │   │
+│  │    ├── 是 → 开 PR，更新 ticket，循环结束 ✓     │   │
+│  │    └── 否 → 回到第 1 步继续                    │   │
+│  │                                             │   │
+│  └─────────────────────────────────────────────┘   │
+│                      ↓                            │
+│  <b>护栏</b>: 迭代上限 / Token 预算 / 无进展检测       │
+└──────────────────────────────────────────────────┘</div>
+
+<p>你在设计这个系统的时候做了一次性的工作：定义目标、选择触发器、设置护栏。然后它自己跑。你没有手动 prompt 七次——你设计了一个七步系统，一次就搞定。</p>
+
+<!-- ============================================ -->
+
+<h2>护栏：为什么 Loop 没有护栏就是灾难</h2>
+
+<p>这是一个关键点。Bouchard 的原文说得很到位：</p>
+
+<div class="epigraph">
+  "如果目标验证不存在，那你建造的不是循环——是一台<b>非常自信的 token 焚化炉</b>。"
+  <span class="attr">— <a href="https://www.louisbouchard.ai/loop-engineering/">Loop Engineering Explained</a></span>
+</div>
+
+<p><b>护栏（Guardrails）</b>是防止循环失控的硬性约束。<b>不是可选的</b>——每个生产级循环都必须有。</p>
+
+<p>为什么？因为 LLM 没有"我完成了"的内在概念。如果你不给它明确的停止条件，它会永远跑下去——不断"优化"、不断重试——直到你的钱烧光。</p>
+
+<div class="guardrail-grid">
+  <div class="guardrail-card">
+    <div class="icon">🔢</div>
+    <div class="name">迭代上限</div>
+    <div class="desc">最大循环次数。超过后必须停止并报告当前状态。</div>
+  </div>
+  <div class="guardrail-card">
+    <div class="icon">💰</div>
+    <div class="name">Token / 成本预算</div>
+    <div class="desc">每次运行的硬性花费上限。已知案例：Agent 调用一个坏工具，5 分钟内调了 400 次。</div>
+  </div>
+  <div class="guardrail-card">
+    <div class="icon">📉</div>
+    <div class="name">无进展检测</div>
+    <div class="desc">连续几轮输出没变化就退出。防止"忙碌但无效"的循环。</div>
+  </div>
+  <div class="guardrail-card">
+    <div class="icon">👤</div>
+    <div class="name">人工检查点</div>
+    <div class="desc">不可逆操作（部署、数据库写入）前必须人工确认。</div>
+  </div>
+  <div class="guardrail-card">
+    <div class="icon">✅</div>
+    <div class="name">终止条件</div>
+    <div class="desc">启动前就定义好"完成"的标准。用自动测试验证，不用 Agent 自我评估。</div>
+  </div>
+  <div class="guardrail-card">
+    <div class="icon">⏰</div>
+    <div class="name">超时</div>
+    <div class="desc">任务级和工具调用级都要有超时。防止卡死。</div>
+  </div>
+</div>
+
+<p>一个真实数据点：Steinberger 承认他每月的 token 费用达到 <b>130 万美元</b>。单 Agent 消耗约 4 倍标准 chat 的 token，多 Agent 系统约 15 倍。<sup><a href="https://datasciencedojo.com/blog/agentic-loops-explained-from-react-to-loop-engineering-2026-guide/">来源</a></sup></p>
+
+<!-- ============================================ -->
+
+<h2>快速自测</h2>
+
+<div class="quiz">
+  <div class="quiz-title">🧠 检查你的理解</div>
+
+  <div class="quiz-question" id="q1">
+    <p>问题 1：Loop Engineering 和 Prompt Engineering 最本质的区别是什么？</p>
+    <ul class="quiz-options" data-answer="2">
+      <li onclick="check(this, 0, 2)">Loop 用的模型更大，Prompt 用的小模型</li>
+      <li onclick="check(this, 1, 2)">Loop 是多轮对话，Prompt 是单轮对话</li>
+      <li onclick="check(this, 2, 2)">Prompt 优化单次交互，Loop 设计可自动重复运行的系统</li>
+      <li onclick="check(this, 3, 2)">Loop 只适用于编码，Prompt 适用于任何任务</li>
+    </ul>
+    <div class="quiz-feedback" id="fb1"></div>
+  </div>
+
+  <div class="quiz-question" id="q2">
+    <p>问题 2：以下哪个是"可验证目标"的好例子？</p>
+    <ul class="quiz-options" data-answer="0">
+      <li onclick="check(this, 0, 0)">所有单元测试通过，CI 构建成功</li>
+      <li onclick="check(this, 1, 0)">代码质量显著提升</li>
+      <li onclick="check(this, 2, 0)">Agent 认为任务已经完成</li>
+      <li onclick="check(this, 3, 0)">用户满意度和代码可读性改善</li>
+    </ul>
+    <div class="quiz-feedback" id="fb2"></div>
+  </div>
+
+  <div class="quiz-question" id="q3">
+    <p>问题 3：为什么每个循环都需要"护栏"？</p>
+    <ul class="quiz-options" data-answer="1">
+      <li onclick="check(this, 0, 1)">因为法律要求所有 AI 系统都有安全措施</li>
+      <li onclick="check(this, 1, 1)">因为 LLM 没有内在的"完成"概念，无约束会永远运行下去</li>
+      <li onclick="check(this, 2, 1)">因为护栏可以提高 Agent 的推理能力</li>
+      <li onclick="check(this, 3, 1)">因为护栏能减少 Agent 使用的 token 数量</li>
+    </ul>
+    <div class="quiz-feedback" id="fb3"></div>
+  </div>
+</div>
+
+<script>
+function check(el, clicked, correct) {
+  const parent = el.closest('.quiz-question');
+  const options = parent.querySelectorAll('li');
+  const fbId = 'fb' + parent.id.replace('q','');
+  const fb = document.getElementById(fbId);
+
+  // Reset all
+  options.forEach(o => { o.classList.remove('correct', 'wrong'); });
+  fb.classList.remove('show', 'correct', 'wrong');
+
+  if (clicked === correct) {
+    el.classList.add('correct');
+    fb.className = 'quiz-feedback show correct';
+    fb.textContent = '✓ 正确！';
+  } else {
+    el.classList.add('wrong');
+    options[correct].classList.add('correct');
+    fb.className = 'quiz-feedback show wrong';
+    fb.textContent = '✗ 不对。正确答案是绿色高亮的选项。再想想为什么？';
+  }
+}
+</script>
+
+<!-- ============================================ -->
+
+<h2>推荐阅读</h2>
+
+<p>如果你只读一篇文章，读这篇：</p>
+
+<p>📘 <b><a href="https://www.louisbouchard.ai/loop-engineering/">Loop Engineering Explained</a></b> — Louis-François Bouchard<br>
+<span class="cite">最清晰的单篇入门。覆盖概念起源、Loop vs Automation、实际案例和护栏。约 10 分钟阅读。</span></p>
+
+<p>如果你想深入了解 Loop 的分类和历史演进：</p>
+
+<p>📗 <b><a href="https://datasciencedojo.com/blog/agentic-loops-explained-from-react-to-loop-engineering-2026-guide/">Agentic Loops: From ReAct to Loop Engineering (2026 Guide)</a></b> — Data Science Dojo<br>
+<span class="cite">10 种 Loop 类型的完整分类学，从 2022 年的 ReAct 到 2026 年的 /goal 命令。约 15 分钟阅读。</span></p>
+
+<!-- ============================================ -->
+
+<div class="lesson-footer">
+  <p>📋 <b>术语速查</b>：完整的术语表见 <a href="../reference/loop-engineering-glossary.html">Loop Engineering 术语表</a></p>
+
+  <div class="next-step">
+    <strong>💬 有任何不清楚的地方？</strong><br>
+    回到对话中直接问我。比如：
+    <ul style="margin-top:0.5rem; padding-left:1.25rem;">
+      <li>"Ralph Loop 和普通循环有什么区别？"</li>
+      <li>"什么场景不适合用 Loop Engineering？"</li>
+      <li>"Token 成本爆炸具体是怎么发生的？"</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
