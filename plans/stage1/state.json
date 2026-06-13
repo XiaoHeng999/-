@@ -1,6 +1,6 @@
 {
   "01-target-variable-and-data-loading": "done",
-  "02-data-cleaning-and-column-exclusion": "pending",
+  "02-data-cleaning-and-column-exclusion": "done",
   "03-q3-major-mapping": "pending",
   "04-feature-encoding-and-aggregation": "pending",
   "05-modeling-pipeline-training-and-evaluation": "pending",
