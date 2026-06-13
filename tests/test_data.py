@@ -5,7 +5,8 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from ralph.data import clean_data, load_data
+from ralph.data import clean_data, load_data, map_major
+from ralph.data import Q2_COL, Q3_COL
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "数据.xlsx"
 Q9_COL = "9、您使用生成式人工智能的频率如何?  "
@@ -128,3 +129,93 @@ class TestQ10NaNFill:
                 assert (cleaned.loc[raw_nan_mask, col] == 14).all(), (
                     f"NaN in {col} should be filled with 14"
                 )
+
+
+class TestMapMajorUnit:
+    """Unit tests for Q3 major mapping with synthetic data."""
+
+    def _make_df(self, q2_vals, q3_vals):
+        return pd.DataFrame({Q2_COL: q2_vals, Q3_COL: q3_vals})
+
+    def test_benke_gongxue_to_like(self):
+        """本科 Q2=1, Q3=8(工学) → 理科"""
+        df = self._make_df([1], [8])
+        result = map_major(df)
+        assert result[Q3_COL].iloc[0] == "理科"
+
+    def test_benke_wenke_mapping(self):
+        """本科 Q2=1, Q3=5(文学) → 文科"""
+        df = self._make_df([1], [5])
+        result = map_major(df)
+        assert result[Q3_COL].iloc[0] == "文科"
+
+    def test_benke_other_mapping(self):
+        """本科 Q2=1, Q3=14(其他专业) → 其他"""
+        df = self._make_df([1], [14])
+        result = map_major(df)
+        assert result[Q3_COL].iloc[0] == "其他"
+
+    def test_zhuanke_like_mapping(self):
+        """专科 Q2=2, Q3=11(电子与信息) → 理科"""
+        df = self._make_df([2], [11])
+        result = map_major(df)
+        assert result[Q3_COL].iloc[0] == "理科"
+
+    def test_zhuanke_wenke_mapping(self):
+        """专科 Q2=2, Q3=13(财经商贸) → 文科"""
+        df = self._make_df([2], [13])
+        result = map_major(df)
+        assert result[Q3_COL].iloc[0] == "文科"
+
+    def test_zhuanke_other_mapping(self):
+        """专科 Q2=2, Q3=20(其他专业) → 其他"""
+        df = self._make_df([2], [20])
+        result = map_major(df)
+        assert result[Q3_COL].iloc[0] == "其他"
+
+    def test_boshi_uses_benke_system(self):
+        """博士 Q2=3 应使用本科编码体系: Q3=8(工学) → 理科"""
+        df = self._make_df([3], [8])
+        result = map_major(df)
+        assert result[Q3_COL].iloc[0] == "理科"
+
+    def test_boshi_wenke_uses_benke_system(self):
+        """博士 Q2=3 应使用本科编码体系: Q3=5(文学) → 文科"""
+        df = self._make_df([3], [5])
+        result = map_major(df)
+        assert result[Q3_COL].iloc[0] == "文科"
+
+
+@requires_data
+class TestMapMajorRealData:
+    """Integration tests for Q3 major mapping on real data."""
+
+    def test_no_nan_after_mapping(self):
+        """映射后 Q3 不应有缺失值"""
+        df = map_major(load_data(DATA_PATH))
+        assert df[Q3_COL].isnull().sum() == 0
+
+    def test_all_values_valid(self):
+        """映射后 Q3 只包含 文科/理科/其他"""
+        df = map_major(load_data(DATA_PATH))
+        assert set(df[Q3_COL].unique()) == {"文科", "理科", "其他"}
+
+    def test_row_count_preserved(self):
+        """映射后行数不变"""
+        raw = load_data(DATA_PATH)
+        mapped = map_major(raw)
+        assert len(mapped) == len(raw)
+
+    def test_benke_distribution(self):
+        """本科 (Q2=1) 映射分布: 理科=732, 文科=322, 其他=47"""
+        df = map_major(load_data(DATA_PATH))
+        benke = df[df[Q2_COL] == 1]
+        counts = benke[Q3_COL].value_counts().to_dict()
+        assert counts == {"理科": 732, "文科": 322, "其他": 47}
+
+    def test_zhuanke_distribution(self):
+        """专科 (Q2=2) 映射分布: 理科=327, 文科=237, 其他=92"""
+        df = map_major(load_data(DATA_PATH))
+        zhuanke = df[df[Q2_COL] == 2]
+        counts = zhuanke[Q3_COL].value_counts().to_dict()
+        assert counts == {"理科": 327, "文科": 237, "其他": 92}
