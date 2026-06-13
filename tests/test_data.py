@@ -3,13 +3,20 @@
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
 from ralph.data import load_data
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "数据.xlsx"
 Q9_COL = "9、您使用生成式人工智能的频率如何?  "
 
+requires_data = pytest.mark.skipif(
+    not DATA_PATH.exists(),
+    reason="数据.xlsx not available (excluded from VCS)",
+)
 
+
+@requires_data
 class TestDataShape:
     """Verify data loads with correct dimensions."""
 
@@ -20,6 +27,7 @@ class TestDataShape:
         assert df.shape == (1781, 79)
 
 
+@requires_data
 class TestTargetDistribution:
     """Verify target column has the expected class counts."""
 
