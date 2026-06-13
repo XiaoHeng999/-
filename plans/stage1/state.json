@@ -4,7 +4,7 @@
   "03-q3-major-mapping": "done",
   "04-feature-encoding-and-aggregation": "done",
   "05-modeling-pipeline-training-and-evaluation": "done",
-  "06-pca-dimensionality-reduction-visualization": "pending",
+  "06-pca-dimensionality-reduction-visualization": "doing",
   "07-feature-importance-analysis": "pending",
   "08-shap-deep-analysis": "pending"
 }
