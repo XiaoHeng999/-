@@ -110,3 +110,42 @@ def map_major(df: pd.DataFrame) -> pd.DataFrame:
 
     df[Q3_COL] = result
     return df
+
+
+def _one_hot(df: pd.DataFrame, col: str, prefix: str) -> pd.DataFrame:
+    """One-Hot encode *col*, drop the original, use *prefix* for new cols."""
+    dummies = pd.get_dummies(df[col], prefix=prefix, dtype=int)
+    return pd.concat([df.drop(columns=[col]), dummies], axis=1)
+
+
+def encode_features(df: pd.DataFrame) -> pd.DataFrame:
+    """Encode categorical features and create aggregate features.
+
+    - Q2, Q3, Q4, Q5: One-Hot encoded
+    - Q8: product_count aggregation added
+    - All other features: kept as numeric
+    - target: preserved
+    """
+    df = df.copy()
+
+    # Columns to One-Hot encode — discovered dynamically by prefix
+    _OH_COLS: list[tuple[str, str]] = [
+        (Q2_COL, "Q2"),
+        (Q3_COL, "Q3"),
+    ]
+
+    for col, prefix in _OH_COLS:
+        df = _one_hot(df, col, prefix)
+
+    # Q4 and Q5 are discovered by prefix since exact names vary
+    for prefix_tag, oh_prefix in [("4、", "Q4"), ("5、", "Q5")]:
+        cols = [c for c in df.columns if c.startswith(prefix_tag)]
+        if cols:
+            df = _one_hot(df, cols[0], oh_prefix)
+
+    # Q8: aggregate binary columns into product_count
+    q8_cols = [c for c in df.columns if c.startswith("8、")]
+    if q8_cols:
+        df["product_count"] = df[q8_cols].sum(axis=1)
+
+    return df

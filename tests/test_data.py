@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from ralph.data import clean_data, load_data, map_major
+from ralph.data import clean_data, encode_features, load_data, map_major
 from ralph.data import Q2_COL, Q3_COL
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "数据.xlsx"
@@ -219,3 +219,133 @@ class TestMapMajorRealData:
         zhuanke = df[df[Q2_COL] == 2]
         counts = zhuanke[Q3_COL].value_counts().to_dict()
         assert counts == {"理科": 327, "文科": 237, "其他": 92}
+
+
+class TestEncodeFeaturesUnit:
+    """Unit tests for feature encoding with synthetic data."""
+
+    def _make_pipeline_df(self):
+        """Create a minimal DataFrame mimicking load→clean→map_major output."""
+        return pd.DataFrame(
+            {
+                "target": [0, 1, 2, 0, 1],
+                "1、您的性别:  ": [1, 2, 1, 2, 1],
+                Q2_COL: [1, 2, 3, 1, 2],
+                Q3_COL: ["理科", "文科", "其他", "理科", "文科"],
+                "4、您的年级:": [1, 2, 3, 4, 5],
+                "5、您更喜欢以下那种课程?  ": [1, 2, 3, 4, 1],
+                "6、您认为在课堂上获得知识的重要程度占比是多少?  ": [50, 60, 70, 80, 90],
+                "7、您认为课程分数的重要程度占比是多少?  ": [30, 40, 50, 60, 70],
+                "8、 您使用过以下哪些生成式人工智能产品?  (文心一言)": [1, 0, 1, 1, 0],
+                "8、(Chat GPT)": [1, 1, 0, 0, 1],
+                "8、(豆包)": [0, 0, 1, 1, 0],
+            }
+        )
+
+    def test_returns_dataframe_with_target(self):
+        """encode_features should return a DataFrame with target column intact."""
+        df = self._make_pipeline_df()
+        result = encode_features(df)
+        assert isinstance(result, pd.DataFrame)
+        assert "target" in result.columns
+        assert list(result["target"]) == [0, 1, 2, 0, 1]
+
+    def test_row_count_preserved(self):
+        """encode_features should preserve row count."""
+        df = self._make_pipeline_df()
+        result = encode_features(df)
+        assert len(result) == len(df)
+
+    def test_q2_one_hot_encoded(self):
+        """Q2 should be One-Hot encoded into 3 columns, original removed."""
+        df = self._make_pipeline_df()
+        result = encode_features(df)
+        assert Q2_COL not in result.columns, "Original Q2 column should be removed"
+        oh_cols = [c for c in result.columns if c.startswith("Q2_")]
+        assert len(oh_cols) == 3, f"Expected 3 Q2 one-hot cols, got {oh_cols}"
+        # Each row should sum to 1 across the one-hot columns
+        assert (result[oh_cols].sum(axis=1) == 1).all()
+
+    def test_q3_one_hot_encoded(self):
+        """Q3 (文科/理科/其他) should be One-Hot encoded into 3 columns."""
+        df = self._make_pipeline_df()
+        result = encode_features(df)
+        assert Q3_COL not in result.columns, "Original Q3 column should be removed"
+        oh_cols = [c for c in result.columns if c.startswith("Q3_")]
+        assert len(oh_cols) == 3, f"Expected 3 Q3 one-hot cols, got {oh_cols}"
+        assert (result[oh_cols].sum(axis=1) == 1).all()
+
+    def test_q4_one_hot_encoded(self):
+        """Q4 should be One-Hot encoded into 5 columns."""
+        df = self._make_pipeline_df()
+        result = encode_features(df)
+        q4_col = [c for c in df.columns if c.startswith("4、")][0]
+        assert q4_col not in result.columns
+        oh_cols = [c for c in result.columns if c.startswith("Q4_")]
+        assert len(oh_cols) == 5, f"Expected 5 Q4 one-hot cols, got {oh_cols}"
+
+    def test_q5_one_hot_encoded(self):
+        """Q5 should be One-Hot encoded into 4 columns."""
+        df = self._make_pipeline_df()
+        result = encode_features(df)
+        q5_col = [c for c in df.columns if c.startswith("5、")][0]
+        assert q5_col not in result.columns
+        oh_cols = [c for c in result.columns if c.startswith("Q5_")]
+        assert len(oh_cols) == 4, f"Expected 4 Q5 one-hot cols, got {oh_cols}"
+
+    def test_product_count_created(self):
+        """product_count should sum all Q8 binary columns per row."""
+        df = self._make_pipeline_df()
+        result = encode_features(df)
+        assert "product_count" in result.columns, "product_count column should be created"
+        # Row 0: Q8 = [1, 1, 0] → count = 2
+        # Row 1: Q8 = [0, 1, 0] → count = 1
+        # Row 2: Q8 = [1, 0, 1] → count = 2
+        # Row 3: Q8 = [1, 0, 1] → count = 2
+        # Row 4: Q8 = [0, 1, 0] → count = 1
+        expected = [2, 1, 2, 2, 1]
+        assert list(result["product_count"]) == expected
+
+
+@requires_data
+class TestEncodeFeaturesIntegration:
+    """Integration tests on real data: load → clean → map_major → encode_features."""
+
+    @pytest.fixture(autouse=True)
+    def _encoded_df(self):
+        """Run the full pipeline once and cache the result."""
+        self.df = encode_features(map_major(clean_data(load_data(DATA_PATH))))
+
+    def test_no_nan_in_feature_matrix(self):
+        """Encoded feature matrix should have zero missing values."""
+        assert not self.df.isnull().any().any(), "Feature matrix must have no NaN"
+
+    def test_target_column_intact(self):
+        """Target column should survive the full pipeline."""
+        assert "target" in self.df.columns
+        counts = self.df["target"].value_counts().sort_index().to_dict()
+        assert counts == {0: 145, 1: 1315, 2: 321}
+
+    def test_row_count_preserved(self):
+        """1781 rows should survive the full pipeline."""
+        assert len(self.df) == 1781
+
+    def test_feature_column_count(self):
+        """Feature count should be ~76 (PRD estimate was ~64 but Q8 has 11 binary cols, not 10)."""
+        feature_cols = [c for c in self.df.columns if c != "target"]
+        assert len(feature_cols) == 76, (
+            f"Expected 76 feature columns, got {len(feature_cols)}"
+        )
+
+    def test_product_count_correlation(self):
+        """product_count should have meaningful correlation with target (r > 0.3)."""
+        corr = self.df["product_count"].corr(self.df["target"].astype(float))
+        assert corr > 0.3, f"product_count correlation with target: {corr:.3f} < 0.3"
+
+    def test_all_dtypes_numeric(self):
+        """All columns (except target) should be numeric for modeling."""
+        feature_cols = [c for c in self.df.columns if c != "target"]
+        for col in feature_cols:
+            assert pd.api.types.is_numeric_dtype(self.df[col]), (
+                f"{col} is not numeric: {self.df[col].dtype}"
+            )
