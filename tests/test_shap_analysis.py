@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from ralph.data import clean_data, encode_features, load_data, map_major
+from src.data import clean_data, encode_features, load_data, map_major
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "数据.xlsx"
 
@@ -28,7 +28,7 @@ def _make_synthetic_df(n_samples=200, n_features=10, seed=42):
 
 def _train_rf_pipeline(df):
     """Train a random forest pipeline on synthetic data for unit testing."""
-    from ralph.model import build_pipelines, split_data
+    from src.model import build_pipelines, split_data
 
     X_train, X_test, y_train, y_test = split_data(df)
     pipelines = build_pipelines()
@@ -46,7 +46,7 @@ class TestComputeShapValuesUnit:
 
     def test_returns_shap_array_with_correct_shape(self):
         """compute_shap_values should return (n_classes, n_samples, n_features) SHAP array."""
-        from ralph.shap_analysis import compute_shap_values
+        from src.shap_analysis import compute_shap_values
 
         df = _make_synthetic_df()
         rf_pipe, X_train, X_test, y_test, feature_names = _train_rf_pipeline(df)
@@ -67,7 +67,7 @@ class TestPlotShapBarUnit:
 
     def test_creates_png_file(self, tmp_path):
         """plot_shap_bar should create a PNG file at save_path."""
-        from ralph.shap_analysis import plot_shap_bar
+        from src.shap_analysis import plot_shap_bar
 
         rng = np.random.default_rng(42)
         n_samples, n_features = 50, 10
@@ -86,7 +86,7 @@ class TestPlotShapBarUnit:
         """Saved chart should have DPI >= 150 for PPT quality."""
         from PIL import Image
 
-        from ralph.shap_analysis import plot_shap_bar
+        from src.shap_analysis import plot_shap_bar
 
         rng = np.random.default_rng(42)
         n_samples, n_features = 50, 10
@@ -109,7 +109,7 @@ class TestPlotShapSummaryUnit:
 
     def test_creates_png_file(self, tmp_path):
         """plot_shap_summary should create a PNG file at save_path."""
-        from ralph.shap_analysis import plot_shap_summary
+        from src.shap_analysis import plot_shap_summary
 
         rng = np.random.default_rng(42)
         n_samples, n_features = 50, 10
@@ -128,7 +128,7 @@ class TestPlotShapSummaryUnit:
         """Saved chart should have DPI >= 150 for PPT quality."""
         from PIL import Image
 
-        from ralph.shap_analysis import plot_shap_summary
+        from src.shap_analysis import plot_shap_summary
 
         rng = np.random.default_rng(42)
         n_samples, n_features = 50, 10
@@ -151,7 +151,7 @@ class TestPlotShapBeeswarmUnit:
 
     def test_creates_png_file(self, tmp_path):
         """plot_shap_beeswarm should create a PNG file at save_path."""
-        from ralph.shap_analysis import plot_shap_beeswarm
+        from src.shap_analysis import plot_shap_beeswarm
 
         rng = np.random.default_rng(42)
         n_samples, n_features = 50, 10
@@ -170,7 +170,7 @@ class TestPlotShapBeeswarmUnit:
         """Saved chart should have DPI >= 150 for PPT quality."""
         from PIL import Image
 
-        from ralph.shap_analysis import plot_shap_beeswarm
+        from src.shap_analysis import plot_shap_beeswarm
 
         rng = np.random.default_rng(42)
         n_samples, n_features = 50, 10
@@ -203,8 +203,8 @@ class TestShapAnalysisIntegration:
     @pytest.fixture(autouse=True)
     def _setup(self):
         """Train RF pipeline on real data and compute SHAP values."""
-        from ralph.model import build_pipelines, split_data
-        from ralph.shap_analysis import compute_shap_values
+        from src.model import build_pipelines, split_data
+        from src.shap_analysis import compute_shap_values
 
         df = _prepare_real_data()
         X_train, X_test, y_train, y_test = split_data(df)
@@ -230,7 +230,7 @@ class TestShapAnalysisIntegration:
         """SHAP bar chart on real data should produce valid PNG with DPI ≥ 150."""
         from PIL import Image
 
-        from ralph.shap_analysis import plot_shap_bar
+        from src.shap_analysis import plot_shap_bar
 
         save_path = tmp_path / "shap_bar_real.png"
         plot_shap_bar(self.shap_values, self.X_sample, class_idx=2, top_n=15, save_path=str(save_path))
@@ -244,7 +244,7 @@ class TestShapAnalysisIntegration:
         """SHAP summary chart on real data should produce valid PNG with DPI ≥ 150."""
         from PIL import Image
 
-        from ralph.shap_analysis import plot_shap_summary
+        from src.shap_analysis import plot_shap_summary
 
         save_path = tmp_path / "shap_summary_real.png"
         plot_shap_summary(self.shap_values, self.X_sample, save_path=str(save_path))
@@ -258,7 +258,7 @@ class TestShapAnalysisIntegration:
         """SHAP beeswarm chart on real data should produce valid PNG with DPI ≥ 150."""
         from PIL import Image
 
-        from ralph.shap_analysis import plot_shap_beeswarm
+        from src.shap_analysis import plot_shap_beeswarm
 
         save_path = tmp_path / "shap_beeswarm_real.png"
         plot_shap_beeswarm(self.shap_values, self.X_sample, class_idx=2, save_path=str(save_path))

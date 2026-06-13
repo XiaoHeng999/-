@@ -12,3 +12,6 @@ wheels/
 # Documents and data files
 *.docx
 *.xlsx
+
+# Experiment results
+results/

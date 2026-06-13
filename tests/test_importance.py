@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from ralph.data import clean_data, encode_features, load_data, map_major
+from src.data import clean_data, encode_features, load_data, map_major
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "数据.xlsx"
 
@@ -28,7 +28,7 @@ def _make_synthetic_df(n_samples=200, n_features=10, seed=42):
 
 def _train_rf_pipeline(df):
     """Train a random forest pipeline on synthetic data for unit testing."""
-    from ralph.model import build_pipelines, split_data
+    from src.model import build_pipelines, split_data
 
     X_train, X_test, y_train, y_test = split_data(df)
     pipelines = build_pipelines()
@@ -46,7 +46,7 @@ class TestComputeRfImportanceUnit:
 
     def test_returns_dataframe_with_correct_columns_and_shape(self):
         """compute_rf_importance should return DataFrame with feature/importance columns, top_n rows, sorted descending."""
-        from ralph.importance import compute_rf_importance
+        from src.importance import compute_rf_importance
 
         df = _make_synthetic_df(n_samples=200, n_features=10)
         rf_pipe, _, _, feature_names = _train_rf_pipeline(df)
@@ -66,7 +66,7 @@ class TestPlotRfImportanceUnit:
 
     def test_creates_png_file(self, tmp_path):
         """plot_rf_importance should create a PNG file at save_path."""
-        from ralph.importance import plot_rf_importance
+        from src.importance import plot_rf_importance
 
         importance_df = pd.DataFrame({
             "feature": [f"feat_{i}" for i in range(5)],
@@ -81,7 +81,7 @@ class TestPlotRfImportanceUnit:
         """Saved chart should have DPI >= 150 for PPT quality."""
         from PIL import Image
 
-        from ralph.importance import plot_rf_importance
+        from src.importance import plot_rf_importance
 
         importance_df = pd.DataFrame({
             "feature": [f"feat_{i}" for i in range(5)],
@@ -100,7 +100,7 @@ class TestComputePermutationImportanceUnit:
 
     def test_returns_dataframe_with_correct_columns_and_shape(self):
         """compute_permutation_importance should return DataFrame sorted descending, top_n rows."""
-        from ralph.importance import compute_permutation_importance
+        from src.importance import compute_permutation_importance
 
         df = _make_synthetic_df(n_samples=200, n_features=10)
         rf_pipe, X_test, y_test, feature_names = _train_rf_pipeline(df)
@@ -122,7 +122,7 @@ class TestPlotPermutationImportanceUnit:
 
     def test_creates_png_file(self, tmp_path):
         """plot_permutation_importance should create a PNG file at save_path."""
-        from ralph.importance import plot_permutation_importance
+        from src.importance import plot_permutation_importance
 
         importance_df = pd.DataFrame({
             "feature": [f"feat_{i}" for i in range(5)],
@@ -137,7 +137,7 @@ class TestPlotPermutationImportanceUnit:
         """Saved chart should have DPI >= 150 for PPT quality."""
         from PIL import Image
 
-        from ralph.importance import plot_permutation_importance
+        from src.importance import plot_permutation_importance
 
         importance_df = pd.DataFrame({
             "feature": [f"feat_{i}" for i in range(5)],
@@ -166,7 +166,7 @@ class TestRfImportanceIntegration:
     @pytest.fixture(autouse=True)
     def _setup(self):
         """Train RF pipeline on real data."""
-        from ralph.model import build_pipelines, split_data
+        from src.model import build_pipelines, split_data
 
         df = _prepare_real_data()
         X_train, X_test, y_train, y_test = split_data(df)
@@ -179,7 +179,7 @@ class TestRfImportanceIntegration:
 
     def test_rf_importance_top_15_on_real_data(self):
         """RF importance on 76 features should return exactly 15 rows."""
-        from ralph.importance import compute_rf_importance
+        from src.importance import compute_rf_importance
 
         result = compute_rf_importance(self.rf_pipe, self.feature_names, top_n=15)
 
@@ -192,7 +192,7 @@ class TestRfImportanceIntegration:
         """Full pipeline on real data should produce valid PNG with DPI >= 150."""
         from PIL import Image
 
-        from ralph.importance import compute_rf_importance, plot_rf_importance
+        from src.importance import compute_rf_importance, plot_rf_importance
 
         result = compute_rf_importance(self.rf_pipe, self.feature_names, top_n=15)
         save_path = tmp_path / "rf_real.png"
@@ -205,7 +205,7 @@ class TestRfImportanceIntegration:
 
     def test_permutation_importance_top_15_on_real_data(self):
         """Permutation importance on real data should return exactly 15 rows."""
-        from ralph.importance import compute_permutation_importance
+        from src.importance import compute_permutation_importance
 
         result = compute_permutation_importance(
             self.rf_pipe, self.X_test, self.y_test,
@@ -219,7 +219,7 @@ class TestRfImportanceIntegration:
         """Permutation importance chart on real data should produce valid PNG."""
         from PIL import Image
 
-        from ralph.importance import compute_permutation_importance, plot_permutation_importance
+        from src.importance import compute_permutation_importance, plot_permutation_importance
 
         result = compute_permutation_importance(
             self.rf_pipe, self.X_test, self.y_test,

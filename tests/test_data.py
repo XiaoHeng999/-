@@ -5,8 +5,8 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from ralph.data import clean_data, encode_features, load_data, map_major
-from ralph.data import Q2_COL, Q3_COL
+from src.data import clean_data, encode_features, load_data, map_major
+from src.data import Q2_COL, Q3_COL
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "数据.xlsx"
 Q9_COL = "9、您使用生成式人工智能的频率如何?  "

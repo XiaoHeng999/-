@@ -1,0 +1,13 @@
+{
+  "stage": 2,
+  "tasks": {
+    "01": {"name": "工具模块与结果目录结构", "status": "done"},
+    "02": {"name": "main.py 编排骨架", "status": "done"},
+    "03": {"name": "实验1: 多模型对比实验", "status": "done"},
+    "04": {"name": "main.py 接入实验1", "status": "done"},
+    "05": {"name": "实验2: 超参数调优实验", "status": "done"},
+    "06": {"name": "实验3: 因子重要性分析", "status": "done"},
+    "07": {"name": "main.py 接入全部实验 + PCA", "status": "done"},
+    "08": {"name": "端到端验证与结果汇总", "status": "done"}
+  }
+}

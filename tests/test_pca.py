@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from ralph.data import clean_data, encode_features, load_data, map_major
+from src.data import clean_data, encode_features, load_data, map_major
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "数据.xlsx"
 
@@ -34,7 +34,7 @@ class TestReducePcaUnit:
 
     def test_returns_2d_array_with_correct_shape(self):
         """reduce_pca should return (n_samples, 2) array."""
-        from ralph.pca import reduce_pca
+        from src.pca import reduce_pca
 
         df = _make_synthetic_df(n_samples=150, n_features=10)
         X = df.drop(columns=["target"])
@@ -44,7 +44,7 @@ class TestReducePcaUnit:
 
     def test_explained_variance_ratio_properties(self):
         """explained_variance_ratio should have length 2, positive, sum < 1."""
-        from ralph.pca import reduce_pca
+        from src.pca import reduce_pca
 
         df = _make_synthetic_df(n_samples=150, n_features=10)
         X = df.drop(columns=["target"])
@@ -60,7 +60,7 @@ class TestPlotPcaScatterUnit:
 
     def test_creates_png_file(self, tmp_path):
         """plot_pca_scatter should create a PNG file at save_path."""
-        from ralph.pca import plot_pca_scatter
+        from src.pca import plot_pca_scatter
 
         rng = np.random.default_rng(42)
         X_reduced = rng.standard_normal((100, 2))
@@ -75,7 +75,7 @@ class TestPlotPcaScatterUnit:
         """Saved scatter plot should have DPI >= 150 for PPT quality."""
         from PIL import Image
 
-        from ralph.pca import plot_pca_scatter
+        from src.pca import plot_pca_scatter
 
         rng = np.random.default_rng(42)
         X_reduced = rng.standard_normal((100, 2))
@@ -103,7 +103,7 @@ class TestReducePcaIntegration:
 
     def test_reduces_76_features_to_2d(self):
         """PCA on 76 features should produce (1781, 2) output."""
-        from ralph.pca import reduce_pca
+        from src.pca import reduce_pca
 
         df = _prepare_real_data()
         X = df.drop(columns=["target"])
@@ -114,7 +114,7 @@ class TestReducePcaIntegration:
 
     def test_explained_variance_positive(self):
         """Each component should explain positive variance."""
-        from ralph.pca import reduce_pca
+        from src.pca import reduce_pca
 
         df = _prepare_real_data()
         X = df.drop(columns=["target"])
@@ -132,7 +132,7 @@ class TestPlotPcaScatterIntegration:
         """Full pipeline: reduce real data → plot → save valid PNG."""
         from PIL import Image
 
-        from ralph.pca import plot_pca_scatter, reduce_pca
+        from src.pca import plot_pca_scatter, reduce_pca
 
         df = _prepare_real_data()
         X = df.drop(columns=["target"])

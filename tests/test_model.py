@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from ralph.data import clean_data, encode_features, load_data, map_major
+from src.data import clean_data, encode_features, load_data, map_major
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "数据.xlsx"
 
@@ -35,7 +35,7 @@ class TestSplitDataUnit:
 
     def test_returns_four_objects_with_correct_shapes(self):
         """split_data returns (X_train, X_test, y_train, y_test) with 80/20 ratio."""
-        from ralph.model import split_data
+        from src.model import split_data
 
         df = _make_synthetic_df(n_samples=200)
         X_train, X_test, y_train, y_test = split_data(df)
@@ -47,7 +47,7 @@ class TestSplitDataUnit:
 
     def test_stratification_preserves_class_ratios(self):
         """Class proportions in train/test should match within tolerance."""
-        from ralph.model import split_data
+        from src.model import split_data
 
         df = _make_synthetic_df(n_samples=1000)
         X_train, X_test, y_train, y_test = split_data(df)
@@ -62,7 +62,7 @@ class TestSplitDataUnit:
 
     def test_features_separated_from_target(self):
         """X should not contain target, y should only be target."""
-        from ralph.model import split_data
+        from src.model import split_data
 
         df = _make_synthetic_df(n_samples=100)
         X_train, X_test, y_train, y_test = split_data(df)
@@ -79,7 +79,7 @@ class TestBuildPipelinesUnit:
 
     def test_returns_dict_with_six_models(self):
         """build_pipelines should return a dict with 6 model entries."""
-        from ralph.model import build_pipelines
+        from src.model import build_pipelines
 
         pipelines = build_pipelines()
         assert isinstance(pipelines, dict)
@@ -87,7 +87,7 @@ class TestBuildPipelinesUnit:
 
     def test_each_pipeline_has_smote_as_first_step(self):
         """Each pipeline should have SMOTE as the first step."""
-        from ralph.model import build_pipelines
+        from src.model import build_pipelines
 
         pipelines = build_pipelines()
         for name, pipe in pipelines.items():
@@ -103,7 +103,7 @@ class TestTrainAndEvaluateUnit:
     @pytest.fixture(autouse=True)
     def _setup(self):
         """Run train_and_evaluate once on synthetic data."""
-        from ralph.model import build_pipelines, split_data, train_and_evaluate
+        from src.model import build_pipelines, split_data, train_and_evaluate
 
         df = _make_synthetic_df(n_samples=200)
         X_train, X_test, y_train, y_test = split_data(df)
@@ -161,7 +161,7 @@ class TestPlotModelComparisonUnit:
 
     def test_creates_png_file(self, tmp_path):
         """plot_model_comparison should create a PNG file at save_path."""
-        from ralph.model import plot_model_comparison
+        from src.model import plot_model_comparison
 
         # Minimal fake results
         results = {
@@ -177,7 +177,7 @@ class TestPlotModelComparisonUnit:
         """Saved chart should have DPI >= 150 for PPT quality."""
         from PIL import Image
 
-        from ralph.model import plot_model_comparison
+        from src.model import plot_model_comparison
 
         results = {"决策树": {"test_macro_f1": 0.45}}
         save_path = tmp_path / "comparison.png"
@@ -203,7 +203,7 @@ class TestSplitDataIntegration:
 
     def test_80_20_split_row_counts(self):
         """80/20 split on 1781 rows: train=1424, test=357 (±1)."""
-        from ralph.model import split_data
+        from src.model import split_data
 
         df = _prepare_real_data()
         X_train, X_test, y_train, y_test = split_data(df)
@@ -213,7 +213,7 @@ class TestSplitDataIntegration:
 
     def test_stratification_on_real_data(self):
         """Class ratios should match between train and test within 2%."""
-        from ralph.model import split_data
+        from src.model import split_data
 
         df = _prepare_real_data()
         X_train, X_test, y_train, y_test = split_data(df)
@@ -228,7 +228,7 @@ class TestSplitDataIntegration:
 
     def test_feature_count_preserved(self):
         """76 features should be preserved through split."""
-        from ralph.model import split_data
+        from src.model import split_data
 
         df = _prepare_real_data()
         X_train, X_test, _, _ = split_data(df)
@@ -243,7 +243,7 @@ class TestTrainAndEvaluateIntegration:
     @pytest.fixture(autouse=True)
     def _setup(self):
         """Run full pipeline: data → split → train → evaluate."""
-        from ralph.model import build_pipelines, split_data, train_and_evaluate
+        from src.model import build_pipelines, split_data, train_and_evaluate
 
         df = _prepare_real_data()
         X_train, X_test, y_train, y_test = split_data(df)
