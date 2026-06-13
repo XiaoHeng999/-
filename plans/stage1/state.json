@@ -5,6 +5,6 @@
   "04-feature-encoding-and-aggregation": "done",
   "05-modeling-pipeline-training-and-evaluation": "done",
   "06-pca-dimensionality-reduction-visualization": "done",
-  "07-feature-importance-analysis": "doing",
+  "07-feature-importance-analysis": "done",
   "08-shap-deep-analysis": "pending"
 }
