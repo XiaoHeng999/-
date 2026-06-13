@@ -15,3 +15,33 @@ wheels/
 
 # Experiment results
 results/
+
+# Claude Code / AI assistant
+.claude/
+
+# Tests
+tests/
+
+# Plans, PRD, and assistant tools
+plans/
+prd/
+ralph/
+
+# Lock files and config
+skills-lock.json
+uv.lock
+.python-version
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
+
+# pytest / ruff cache
+.pytest_cache/
+.ruff_cache/
+
+# GitHub Actions
+.github/
