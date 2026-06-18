@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="p02-header">
+    <text x="60" y="74" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="30" font-weight="800" fill="#1A3C6E">生成式AI正深度渗透校园，使用频率出现明显分化</text>
+    <path fill="#B11226" d="M64.50,90 H119.50 A2.50,2.50 0 0 1 122,92.50 V92.50 A2.50,2.50 0 0 1 119.50,95 H64.50 A2.50,2.50 0 0 1 62,92.50 V92.50 A2.50,2.50 0 0 1 64.50,90 Z" />
+  </g>
+
+  <g id="hero-question">
+    <text x="60" y="188" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="3">CORE RESEARCH QUESTION · 核心研究问题</text>
+    
+  <g transform="translate(60.0, 216.0) scale(1.6666666666666667)" fill="none" stroke="#B11226" stroke-width="2">
+    <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" />
+  </g>
+    <text font-size="46" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-weight="800" fill="#1A3C6E" x="60" y="356">哪些因素，</text><text font-size="46" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-weight="800" fill="#1A3C6E" x="60" y="420">决定了大学生</text><text font-size="46" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-weight="800" fill="#1A3C6E" x="60" y="484">使用生成式AI的</text><text font-size="46" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-weight="800" fill="#1A3C6E" x="60" y="548"><tspan><tspan fill="#B11226">频率高低</tspan>？</tspan>
+    </text></g>
+
+  <line x1="680" y1="170" x2="680" y2="640" stroke="#E8E3D6" stroke-width="1.5" />
+
+  <g id="ctx-background">
+    
+  <g transform="translate(720.0, 178.0) scale(1.1666666666666667)" fill="none" stroke="#1A3C6E" stroke-width="2">
+    <path d="M6 6a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -4" />
+    <path d="M12 2v2" />
+    <path d="M9 12v9" />
+    <path d="M15 12v9" />
+    <path d="M5 16l4 -2" />
+    <path d="M15 14l4 2" />
+    <path d="M9 18h6" />
+    <path d="M10 8v.01" />
+    <path d="M14 8v.01" />
+  </g>
+    <text x="760" y="200" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#1A3C6E" letter-spacing="1">背景</text>
+    <text font-size="19" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" fill="#23262B" x="720" y="240">生成式人工智能（AIGC）正在快速渗透</text><text font-size="19" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" fill="#23262B" x="720" y="270">大学生的学习和生活，使用频率因人而异，</text><text font-size="19" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" fill="#23262B" x="720" y="300">出现明显的群体分化。</text></g>
+  <line x1="720" y1="348" x2="1220" y2="348" stroke="#E8E3D6" stroke-width="1" />
+
+  <g id="ctx-data">
+    
+  <g transform="translate(720.0, 372.0) scale(1.1666666666666667)" fill="none" stroke="#5B7DB1" stroke-width="2">
+    <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+    <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+    <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+  </g>
+    <text x="760" y="394" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#1A3C6E" letter-spacing="1">数据基础</text>
+    <text font-size="19" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" fill="#23262B" x="720" y="434"><tspan>基于 <tspan font-weight="800" fill="#1A3C6E">1781 份</tspan>大学生生成式AI使用情况</tspan>
+      </text><text font-size="19" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" fill="#23262B" x="720" y="464">问卷，覆盖人口统计、功能偏好、四大</text><text font-size="19" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" fill="#23262B" x="720" y="494">场景量表等多元维度。</text></g>
+  <line x1="720" y1="546" x2="1220" y2="546" stroke="#E8E3D6" stroke-width="1" />
+
+  <g id="ctx-method">
+    
+  <g transform="translate(720.0, 570.0) scale(1.1666666666666667)" fill="none" stroke="#B11226" stroke-width="2">
+    <path d="M9 3l6 0" />
+    <path d="M10 9l4 0" />
+    <path d="M10 3v6l-4 11a.7 .7 0 0 0 .5 1h11a.7 .7 0 0 0 .5 -1l-4 -11v-6" />
+  </g>
+    <text x="760" y="592" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#1A3C6E" letter-spacing="1">研究路径</text>
+    <text font-size="19" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" fill="#23262B" x="720" y="632">以机器学习分类模型量化各因素的</text><text font-size="19" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" fill="#23262B" x="720" y="662">影响力，用数据回答"为什么"。</text></g>
+
+  <g id="p02-footer">
+    <line x1="60" y1="690" x2="1220" y2="690" stroke="#E8E3D6" stroke-width="1" />
+    <text x="60" y="708" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">数据来源：大学生生成式人工智能使用情况问卷（N = 1781）</text>
+    <text x="1220" y="708" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">02 / 14</text>
+  </g>
+</svg>

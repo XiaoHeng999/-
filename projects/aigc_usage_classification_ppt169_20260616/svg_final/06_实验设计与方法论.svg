@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="p06-header">
+    <text x="60" y="74" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="30" font-weight="800" fill="#1A3C6E">SMOTE + 分层划分 + 5 折 CV，三大实验逐层验证结论</text>
+    <path fill="#B11226" d="M64.50,90 H119.50 A2.50,2.50 0 0 1 122,92.50 V92.50 A2.50,2.50 0 0 1 119.50,95 H64.50 A2.50,2.50 0 0 1 62,92.50 V92.50 A2.50,2.50 0 0 1 64.50,90 Z" />
+  </g>
+
+  <g id="pipeline-row">
+    <text x="60" y="142" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">建模管线 · 防泄漏可复现</text>
+    <path fill="#F3F1EC" d="M70,158 H1210 A10,10 0 0 1 1220,168 V298 A10,10 0 0 1 1210,308 H70 A10,10 0 0 1 60,298 V168 A10,10 0 0 1 70,158 Z" />
+
+    <g id="stage-smote">
+      <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M86,178 H328 A8,8 0 0 1 336,186 V280 A8,8 0 0 1 328,288 H86 A8,8 0 0 1 78,280 V186 A8,8 0 0 1 86,178 Z" />
+      <path fill="#1A3C6E" d="M86,178 H328 A8,8 0 0 1 336,186 V204 A8,8 0 0 1 328,212 H86 A8,8 0 0 1 78,204 V186 A8,8 0 0 1 86,178 Z" />
+      <rect x="78" y="200" width="258" height="12" fill="#1A3C6E" />
+      
+  <g transform="translate(92.0, 184.0) scale(0.9166666666666666)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M5 18a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M5 6a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M15 6a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M7 8l0 8" />
+    <path d="M9 18h6a2 2 0 0 0 2 -2v-5" />
+    <path d="M14 14l3 -3l3 3" />
+  </g>
+      <text x="122" y="201" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">SMOTE 过采样</text>
+      <text x="92" y="238" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">仅训练集内合成少数类</text>
+      <text x="92" y="262" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#56606B">测试集保持原始分布</text>
+    </g>
+    <polygon points="342,233 354,233 354,227 366,237 354,247 354,241 342,241" fill="#8C949D" />
+
+    <g id="stage-split">
+      <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M380,178 H622 A8,8 0 0 1 630,186 V280 A8,8 0 0 1 622,288 H380 A8,8 0 0 1 372,280 V186 A8,8 0 0 1 380,178 Z" />
+      <path fill="#5B7DB1" d="M380,178 H622 A8,8 0 0 1 630,186 V204 A8,8 0 0 1 622,212 H380 A8,8 0 0 1 372,204 V186 A8,8 0 0 1 380,178 Z" />
+      <rect x="372" y="200" width="258" height="12" fill="#5B7DB1" />
+      
+  <g transform="translate(386.0, 184.0) scale(0.9166666666666666)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M7 20l10 0" />
+    <path d="M6 6l6 -1l6 1" />
+    <path d="M12 3l0 17" />
+    <path d="M9 12l-3 -6l-3 6a3 3 0 0 0 6 0" />
+    <path d="M21 12l-3 -6l-3 6a3 3 0 0 0 6 0" />
+  </g>
+      <text x="416" y="201" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">分层划分 80/20</text>
+      <text x="386" y="238" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">Stratified Split</text>
+      <text x="386" y="262" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#56606B">保持三类比例一致</text>
+    </g>
+    <polygon points="636,233 648,233 648,227 660,237 648,247 648,241 636,241" fill="#8C949D" />
+
+    <g id="stage-cv">
+      <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M674,178 H916 A8,8 0 0 1 924,186 V280 A8,8 0 0 1 916,288 H674 A8,8 0 0 1 666,280 V186 A8,8 0 0 1 674,178 Z" />
+      <path fill="#5B7DB1" d="M674,178 H916 A8,8 0 0 1 924,186 V204 A8,8 0 0 1 916,212 H674 A8,8 0 0 1 666,204 V186 A8,8 0 0 1 674,178 Z" />
+      <rect x="666" y="200" width="258" height="12" fill="#5B7DB1" />
+      
+  <g transform="translate(680.0, 184.0) scale(0.9166666666666666)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+    <path d="M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2" />
+    <path d="M9 14l2 2l4 -4" />
+  </g>
+      <text x="710" y="201" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">5 折交叉验证</text>
+      <text x="680" y="238" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">5-Fold CV</text>
+      <text x="680" y="262" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#56606B">稳健估计泛化性能</text>
+    </g>
+    <polygon points="930,233 942,233 942,227 954,237 942,247 942,241 930,241" fill="#8C949D" />
+
+    <g id="stage-metric">
+      <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M968,178 H1194 A8,8 0 0 1 1202,186 V280 A8,8 0 0 1 1194,288 H968 A8,8 0 0 1 960,280 V186 A8,8 0 0 1 968,178 Z" />
+      <path fill="#B11226" d="M968,178 H1194 A8,8 0 0 1 1202,186 V204 A8,8 0 0 1 1194,212 H968 A8,8 0 0 1 960,204 V186 A8,8 0 0 1 968,178 Z" />
+      <rect x="960" y="200" width="242" height="12" fill="#B11226" />
+      
+  <g transform="translate(974.0, 184.0) scale(0.9166666666666666)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -6" />
+    <path d="M15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -10" />
+    <path d="M9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -14" />
+    <path d="M4 20h14" />
+  </g>
+      <text x="1004" y="201" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">指标评估</text>
+      <text x="974" y="238" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B"><tspan font-weight="800" fill="#B11226">Macro F1</tspan> 为主</text>
+      <text x="974" y="262" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#56606B">+ 每类 P/R + 混淆矩阵</text>
+    </g>
+  </g>
+
+  <g id="experiments">
+    <text x="60" y="346" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">三大实验 · 递进验证</text>
+
+    <g id="exp1">
+      <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M70,364 H424 A10,10 0 0 1 434,374 V624 A10,10 0 0 1 424,634 H70 A10,10 0 0 1 60,624 V374 A10,10 0 0 1 70,364 Z" />
+      <path fill="#1A3C6E" d="M70,364 H424 A10,10 0 0 1 434,374 V410 A10,10 0 0 1 424,420 H70 A10,10 0 0 1 60,410 V374 A10,10 0 0 1 70,364 Z" />
+      <rect x="60" y="396" width="374" height="24" fill="#1A3C6E" />
+      <circle cx="92" cy="392" r="18" fill="#FFFFFF" fill-opacity="0.15" />
+      <text x="92" y="399" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">01</text>
+      <text x="120" y="399" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">多模型对比</text>
+      
+  <g transform="translate(80.0, 440.0) scale(1.0833333333333333)" fill="none" stroke="#1A3C6E" stroke-width="2">
+    <path d="M8 21l8 0" />
+    <path d="M12 17l0 4" />
+    <path d="M7 4l10 0" />
+    <path d="M17 4v8a5 5 0 0 1 -10 0v-8" />
+    <path d="M3 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M17 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+  </g>
+      <text x="116" y="460" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="700" fill="#23262B">6 个模型同台竞技</text>
+      <text x="80" y="494" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">KNN · 决策树 · 随机森林</text>
+      <text x="80" y="520" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">SVM · 朴素贝叶斯 · Logistic</text>
+      <line x1="80" y1="546" x2="414" y2="546" stroke="#E8E3D6" stroke-width="1" />
+      <text x="80" y="576" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">产出：性能排名 + 混淆矩阵</text>
+      <text x="80" y="606" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="700" fill="#1A3C6E">→ 选出最优基线模型</text>
+    </g>
+
+    <g id="exp2">
+      <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M463,364 H817 A10,10 0 0 1 827,374 V624 A10,10 0 0 1 817,634 H463 A10,10 0 0 1 453,624 V374 A10,10 0 0 1 463,364 Z" />
+      <path fill="#5B7DB1" d="M463,364 H817 A10,10 0 0 1 827,374 V410 A10,10 0 0 1 817,420 H463 A10,10 0 0 1 453,410 V374 A10,10 0 0 1 463,364 Z" />
+      <rect x="453" y="396" width="374" height="24" fill="#5B7DB1" />
+      <circle cx="485" cy="392" r="18" fill="#FFFFFF" fill-opacity="0.15" />
+      <text x="485" y="399" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">02</text>
+      <text x="513" y="399" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">超参数调优</text>
+      
+  <g transform="translate(473.0, 440.0) scale(1.0833333333333333)" fill="none" stroke="#5B7DB1" stroke-width="2">
+    <path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+    <path d="M6 4v4" />
+    <path d="M6 12v8" />
+    <path d="M10 16a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+    <path d="M12 4v10" />
+    <path d="M12 18v2" />
+    <path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+    <path d="M18 4v1" />
+    <path d="M18 9v11" />
+  </g>
+      <text x="509" y="460" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="700" fill="#23262B">GridSearchCV 网格搜索</text>
+      <text x="473" y="494" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">对 SVM / RF / 决策树 / KNN</text>
+      <text x="473" y="520" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">逐模型搜索最优超参组合</text>
+      <line x1="473" y1="546" x2="807" y2="546" stroke="#E8E3D6" stroke-width="1" />
+      <text x="473" y="576" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">产出：最优配置 + 调优收益</text>
+      <text x="473" y="606" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="700" fill="#5B7DB1">→ 榨干模型上限</text>
+    </g>
+
+    <g id="exp3">
+      <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M856,364 H1210 A10,10 0 0 1 1220,374 V624 A10,10 0 0 1 1210,634 H856 A10,10 0 0 1 846,624 V374 A10,10 0 0 1 856,364 Z" />
+      <path fill="#B11226" d="M856,364 H1210 A10,10 0 0 1 1220,374 V410 A10,10 0 0 1 1210,420 H856 A10,10 0 0 1 846,410 V374 A10,10 0 0 1 856,364 Z" />
+      <rect x="846" y="396" width="374" height="24" fill="#B11226" />
+      <circle cx="878" cy="392" r="18" fill="#FFFFFF" fill-opacity="0.15" />
+      <text x="878" y="399" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">03</text>
+      <text x="906" y="399" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">因子重要性分析</text>
+      
+  <g transform="translate(866.0, 440.0) scale(1.0833333333333333)" fill="none" stroke="#B11226" stroke-width="2">
+    <path d="M5 21h14" />
+    <path d="M6 18h2" />
+    <path d="M7 18v3" />
+    <path d="M9 11l3 3l6 -6l-3 -3l-6 6" />
+    <path d="M10.5 12.5l-1.5 1.5" />
+    <path d="M17 3l3 3" />
+    <path d="M12 21a6 6 0 0 0 3.715 -10.712" />
+  </g>
+      <text x="902" y="460" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="700" fill="#23262B">三方法共识排名</text>
+      <text x="866" y="494" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">RF 重要性 + Permutation</text>
+      <text x="866" y="520" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">+ SHAP 可解释性</text>
+      <line x1="866" y1="546" x2="1200" y2="546" stroke="#E8E3D6" stroke-width="1" />
+      <text x="866" y="576" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">产出：Top-10 关键因子</text>
+      <text x="866" y="606" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="700" fill="#B11226">→ 回答"哪些因素最关键"</text>
+    </g>
+  </g>
+
+  <g id="p06-footer">
+    <line x1="60" y1="690" x2="1220" y2="690" stroke="#E8E3D6" stroke-width="1" />
+    <text x="60" y="708" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">技术栈：scikit-learn · imbalanced-learn (SMOTE) · SHAP · 以 Macro F1 为主指标</text>
+    <text x="1220" y="708" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">06 / 14</text>
+  </g>
+</svg>

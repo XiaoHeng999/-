@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="p03-header">
+    <text x="60" y="74" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="30" font-weight="800" fill="#1A3C6E">产品广度与功能取向是强信号，SVM 达到最优分类</text>
+    <text x="60" y="104" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#56606B">答案先行 —— 先摆出四个最关键的发现，后续逐页给出证据</text>
+    <path fill="#B11226" d="M64.50,118 H119.50 A2.50,2.50 0 0 1 122,120.50 V120.50 A2.50,2.50 0 0 1 119.50,123 H64.50 A2.50,2.50 0 0 1 62,120.50 V120.50 A2.50,2.50 0 0 1 64.50,118 Z" />
+  </g>
+
+  <g id="kpi-model">
+    <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M72,158 H608 A12,12 0 0 1 620,170 V382 A12,12 0 0 1 608,394 H72 A12,12 0 0 1 60,382 V170 A12,12 0 0 1 72,158 Z" />
+    <path fill="#1A3C6E" d="M63,158 H63 A3,3 0 0 1 66,161 V391 A3,3 0 0 1 63,394 H63 A3,3 0 0 1 60,391 V161 A3,3 0 0 1 63,158 Z" />
+    
+  <g transform="translate(92.0, 186.0) scale(1.25)" fill="none" stroke="#1A3C6E" stroke-width="2">
+    <path d="M8 21l8 0" />
+    <path d="M12 17l0 4" />
+    <path d="M7 4l10 0" />
+    <path d="M17 4v8a5 5 0 0 1 -10 0v-8" />
+    <path d="M3 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M17 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+  </g>
+    <text x="134" y="208" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="18" font-weight="700" fill="#56606B">最优模型</text>
+    <text x="92" y="300" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="56" font-weight="800" fill="#1A3C6E">0.4988</text>
+    <text x="92" y="330" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#8C949D">Macro F1 · SVM 在 6 模型中居首</text>
+    <line x1="92" y1="350" x2="588" y2="350" stroke="#E8E3D6" stroke-width="1" />
+    <text x="92" y="376" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">调优后 CV Macro F1 进一步提升至 <tspan font-weight="800" fill="#B11226">0.520</tspan></text>
+  </g>
+
+  <g id="kpi-factor">
+    <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M672,158 H1208 A12,12 0 0 1 1220,170 V382 A12,12 0 0 1 1208,394 H672 A12,12 0 0 1 660,382 V170 A12,12 0 0 1 672,158 Z" />
+    <path fill="#B11226" d="M663,158 H663 A3,3 0 0 1 666,161 V391 A3,3 0 0 1 663,394 H663 A3,3 0 0 1 660,391 V161 A3,3 0 0 1 663,158 Z" />
+    
+  <g transform="translate(692.0, 186.0) scale(1.25)" fill="none" stroke="#B11226" stroke-width="2">
+    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+    <path d="M4 12l8 4l8 -4" />
+    <path d="M4 16l8 4l8 -4" />
+  </g>
+    <text x="734" y="208" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="18" font-weight="700" fill="#56606B">最强预测因子</text>
+    <text x="692" y="300" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="56" font-weight="800" fill="#B11226">#1</text>
+    <text x="692" y="330" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#8C949D">共识排名 · 使用产品数量 product_count</text>
+    <line x1="692" y1="350" x2="1188" y2="350" stroke="#E8E3D6" stroke-width="1" />
+    <text x="692" y="376" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">与频率相关系数 <tspan font-weight="800" fill="#1A3C6E">r = 0.364</tspan>，三方法高度一致</text>
+  </g>
+
+  <g id="kpi-sample">
+    <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M72,416 H608 A12,12 0 0 1 620,428 V640 A12,12 0 0 1 608,652 H72 A12,12 0 0 1 60,640 V428 A12,12 0 0 1 72,416 Z" />
+    <path fill="#5B7DB1" d="M63,416 H63 A3,3 0 0 1 66,419 V649 A3,3 0 0 1 63,652 H63 A3,3 0 0 1 60,649 V419 A3,3 0 0 1 63,416 Z" />
+    
+  <g transform="translate(92.0, 444.0) scale(1.25)" fill="none" stroke="#5B7DB1" stroke-width="2">
+    <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+    <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+    <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+  </g>
+    <text x="134" y="466" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="18" font-weight="700" fill="#56606B">样本与任务规模</text>
+    <text x="92" y="558" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="56" font-weight="800" fill="#1A3C6E">1781</text>
+    <text x="92" y="588" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#8C949D">份问卷 · 经特征工程得 64 个建模特征</text>
+    <line x1="92" y1="608" x2="588" y2="608" stroke="#E8E3D6" stroke-width="1" />
+    <text x="92" y="634" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">目标为 <tspan font-weight="800" fill="#1A3C6E">三分类</tspan>：低频 / 中频 / 高频使用者</text>
+  </g>
+
+  <g id="kpi-limit">
+    <path fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1" d="M672,416 H1208 A12,12 0 0 1 1220,428 V640 A12,12 0 0 1 1208,652 H672 A12,12 0 0 1 660,640 V428 A12,12 0 0 1 672,416 Z" />
+    <path fill="#C77700" d="M663,416 H663 A3,3 0 0 1 666,419 V649 A3,3 0 0 1 663,652 H663 A3,3 0 0 1 660,649 V419 A3,3 0 0 1 663,416 Z" />
+    
+  <g transform="translate(692.0, 444.0) scale(1.25)" fill="none" stroke="#C77700" stroke-width="2">
+    <path d="M12 9v4" />
+    <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+    <path d="M12 16h.01" />
+  </g>
+    <text x="734" y="466" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="18" font-weight="700" fill="#56606B">主要局限</text>
+    <text x="692" y="558" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="56" font-weight="800" fill="#C77700">8.1%</text>
+    <text x="692" y="588" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#8C949D">低频组占比 · 样本极度不平衡</text>
+    <line x1="692" y1="608" x2="1188" y2="608" stroke="#E8E3D6" stroke-width="1" />
+    <text x="692" y="634" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">样本量不足拖累整体分类难度，是核心瓶颈</text>
+  </g>
+
+  <g id="p03-footer">
+    <line x1="60" y1="690" x2="1220" y2="690" stroke="#E8E3D6" stroke-width="1" />
+    <text x="60" y="708" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">汇总：模型对比 · 超参调优 · 因子分析（RF / Permutation / SHAP 共识）</text>
+    <text x="1220" y="708" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">03 / 14</text>
+  </g>
+</svg>

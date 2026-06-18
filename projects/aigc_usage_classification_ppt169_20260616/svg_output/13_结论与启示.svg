@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="p13-header">
+    <text x="60" y="74" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="30" font-weight="800" fill="#1A3C6E">产品广度与功能取向是频率主因，样本不平衡是核心瓶颈</text>
+    <rect x="62" y="90" width="60" height="5" rx="2.5" fill="#B11226"/>
+  </g>
+
+  <g id="conclusions-track">
+    <text x="60" y="132" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">四点核心结论</text>
+    <line x1="92" y1="150" x2="92" y2="640" stroke="#1A3C6E" stroke-width="3" stroke-linecap="round"/>
+
+    <g id="concl-1">
+      <circle cx="92" cy="184" r="24" fill="#1A3C6E"/>
+      <text x="92" y="191" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">01</text>
+      <rect x="140" y="150" width="560" height="68" rx="8" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+      <rect x="140" y="150" width="5" height="68" rx="2.5" fill="#1A3C6E"/>
+      <use data-icon="tabler-outline/stack-2" x="160" y="166" width="22" height="22" fill="#1A3C6E" stroke-width="2"/>
+      <text x="192" y="184" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#23262B">使用产品数量是最强预测因子</text>
+      <text x="192" y="206" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">相关系数 <tspan font-weight="800" fill="#1A3C6E">r = 0.364</tspan>，三方法共识排名第一</text>
+    </g>
+
+    <g id="concl-2">
+      <circle cx="92" cy="288" r="24" fill="#B11226"/>
+      <text x="92" y="295" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">02</text>
+      <rect x="140" y="254" width="560" height="68" rx="8" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+      <rect x="140" y="254" width="5" height="68" rx="2.5" fill="#B11226"/>
+      <use data-icon="tabler-outline/bolt" x="160" y="270" width="22" height="22" fill="#B11226" stroke-width="2"/>
+      <text x="192" y="288" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#23262B">文本生成功能是关键区分因素</text>
+      <text x="192" y="310" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">越倾向文本生成 / 编程调试，使用频率越高</text>
+    </g>
+
+    <g id="concl-3">
+      <circle cx="92" cy="392" r="24" fill="#5B7DB1"/>
+      <text x="92" y="399" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">03</text>
+      <rect x="140" y="358" width="560" height="68" rx="8" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+      <rect x="140" y="358" width="5" height="68" rx="2.5" fill="#5B7DB1"/>
+      <use data-icon="tabler-outline/users" x="160" y="374" width="22" height="22" fill="#5B7DB1" stroke-width="2"/>
+      <text x="192" y="392" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#23262B">性别与学科背景对频率有显著影响</text>
+      <text x="192" y="414" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">性别、文理科进入 Top-10 关键因子</text>
+    </g>
+
+    <g id="concl-4">
+      <circle cx="92" cy="496" r="24" fill="#C77700"/>
+      <text x="92" y="503" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">04</text>
+      <rect x="140" y="462" width="560" height="68" rx="8" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+      <rect x="140" y="462" width="5" height="68" rx="2.5" fill="#C77700"/>
+      <use data-icon="tabler-outline/alert-triangle" x="160" y="478" width="22" height="22" fill="#C77700" stroke-width="2"/>
+      <text x="192" y="496" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#23262B">SVM 最优但整体难度大</text>
+      <text x="192" y="518" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">Macro F1 = 0.4988，受低频样本不足（8.1%）限制</text>
+    </g>
+
+    <g id="concl-tail">
+      <circle cx="92" cy="612" r="24" fill="#2E7D32"/>
+      <use data-icon="tabler-outline/flag" x="78" y="598" width="28" height="28" fill="#FFFFFF" stroke-width="2"/>
+      <rect x="140" y="578" width="560" height="68" rx="8" fill="#F3F1EC"/>
+      <rect x="140" y="578" width="5" height="68" rx="2.5" fill="#2E7D32"/>
+      <text x="160" y="606" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#1A3C6E">研究同时回答了"为什么"和"还差什么"</text>
+      <text x="160" y="630" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">因果归因与改进方向并存，结论可落地</text>
+    </g>
+  </g>
+
+  <line x1="734" y1="132" x2="734" y2="660" stroke="#E8E3D6" stroke-width="1.5"/>
+
+  <g id="limit-future">
+    <text x="762" y="132" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">局限 · LIMITATIONS</text>
+    <use data-icon="tabler-outline/alert-triangle" x="762" y="150" width="20" height="20" fill="#C77700" stroke-width="2"/>
+    <text x="790" y="166" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">低频样本极少（8.1%），少数类召回受限</text>
+    <use data-icon="tabler-outline/alert-triangle" x="762" y="186" width="20" height="20" fill="#C77700" stroke-width="2"/>
+    <text x="790" y="202" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">PCA 可分性低，二维难以线性分离</text>
+    <use data-icon="tabler-outline/alert-triangle" x="762" y="222" width="20" height="20" fill="#C77700" stroke-width="2"/>
+    <text x="790" y="238" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">问卷自填数据存在主观偏差</text>
+
+    <line x1="762" y1="272" x2="1220" y2="272" stroke="#D4D0C4" stroke-width="1"/>
+
+    <text x="762" y="310" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#2E7D32" letter-spacing="2">展望 · FUTURE WORK</text>
+    <use data-icon="tabler-outline/flag" x="762" y="328" width="20" height="20" fill="#2E7D32" stroke-width="2"/>
+    <text x="790" y="344" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">针对低频组的精细过采样策略</text>
+    <use data-icon="tabler-outline/flag" x="762" y="364" width="20" height="20" fill="#2E7D32" stroke-width="2"/>
+    <text x="790" y="380" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">引入非线性模型（梯度提升 / 神经网络）</text>
+    <use data-icon="tabler-outline/flag" x="762" y="400" width="20" height="20" fill="#2E7D32" stroke-width="2"/>
+    <text x="790" y="416" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">纵向追踪，刻画使用频率的动态变化</text>
+
+    <rect x="762" y="448" width="458" height="190" rx="10" fill="#F3F1EC"/>
+    <use data-icon="tabler-outline/bulb" x="786" y="472" width="26" height="26" fill="#1A3C6E" stroke-width="2"/>
+    <text x="822" y="492" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#1A3C6E">一句话总结</text>
+    <text x="786" y="528" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" fill="#23262B">
+      <tspan x="786" dy="0">生成式AI使用频率的高低，</tspan>
+      <tspan x="786" dy="26">可由<tspan font-weight="800" fill="#B11226">产品广度与功能取向</tspan>预测，</tspan>
+      <tspan x="786" dy="26">但低频样本稀缺制约了精度上限。</tspan>
+    </text>
+  </g>
+
+  <g id="p13-footer">
+    <line x1="60" y1="690" x2="1220" y2="690" stroke="#E8E3D6" stroke-width="1"/>
+    <text x="60" y="708" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">结论汇总：results/experiment_summary.txt</text>
+    <text x="1220" y="708" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">13 / 14</text>
+  </g>
+</svg>

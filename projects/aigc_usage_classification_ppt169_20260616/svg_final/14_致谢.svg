@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <radialGradient id="thanksDecor" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1A3C6E" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#1A3C6E" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="bg-decor">
+    <rect width="1280" height="720" fill="url(#thanksDecor)" />
+    <rect x="0" y="0" width="1280" height="8" fill="#B11226" />
+    <rect x="0" y="8" width="1280" height="2" fill="#1A3C6E" />
+  </g>
+
+  <g id="thanks-hero">
+    
+  <g transform="translate(596.0, 180.0) scale(3.6666666666666665)" fill="none" stroke="#B11226" stroke-width="2">
+    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+    <path d="M9 10l.01 0" />
+    <path d="M15 10l.01 0" />
+    <path d="M9.5 15a3.5 3.5 0 0 0 5 0" />
+  </g>
+    <text x="640" y="368" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="80" font-weight="800" fill="#1A3C6E" letter-spacing="6">谢谢聆听</text>
+    <path fill="#B11226" d="M563,396 H717 A3,3 0 0 1 720,399 V399 A3,3 0 0 1 717,402 H563 A3,3 0 0 1 560,399 V399 A3,3 0 0 1 563,396 Z" />
+    <text x="640" y="450" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="26" font-weight="500" fill="#56606B">欢迎提问与指正</text>
+  </g>
+
+  <g id="thanks-note">
+    <path fill="#F3F1EC" d="M352,500 H928 A12,12 0 0 1 940,512 V572 A12,12 0 0 1 928,584 H352 A12,12 0 0 1 340,572 V512 A12,12 0 0 1 352,500 Z" />
+    
+  <g transform="translate(368.0, 528.0) scale(1.1666666666666667)" fill="none" stroke="#B11226" stroke-width="2">
+    <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+  </g>
+    <text x="640" y="540" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="18" font-weight="700" fill="#1A3C6E">感谢老师与同学的指导与建议</text>
+    <text x="640" y="568" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">大学生生成式人工智能使用频率影响因素研究 · 模式识别课程大作业</text>
+  </g>
+
+  <g id="thanks-footer">
+    <line x1="60" y1="668" x2="1220" y2="668" stroke="#E8E3D6" stroke-width="1" />
+    <text x="640" y="696" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#8C949D">2026 年 6 月</text>
+  </g>
+</svg>

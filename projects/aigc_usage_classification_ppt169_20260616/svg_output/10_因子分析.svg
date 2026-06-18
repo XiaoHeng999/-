@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="p10-header">
+    <text x="60" y="74" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="30" font-weight="800" fill="#1A3C6E">产品数量、文本生成与特定产品使用是最强预测因子</text>
+    <rect x="62" y="90" width="60" height="5" rx="2.5" fill="#B11226"/>
+  </g>
+
+  <g id="panel-cross">
+    <text x="60" y="132" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">跨方法对比 · RF / Permutation / SHAP 三方法一致</text>
+    <rect x="60" y="142" width="560" height="372" rx="10" fill="#FAF8F3" stroke="#D4D0C4" stroke-width="1"/>
+    <image href="../images/factor_cross_method.png" x="64" y="146" width="552" height="364" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+
+  <g id="panel-rank">
+    <text x="660" y="132" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">TOP-10 关键因子 · 共识平均排名</text>
+    <g id="chartArea">
+      <!-- chart-plot-area: 880,158,1204,514 -->
+      <text x="676" y="178" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#56606B">排名越靠前（值越小）越关键</text>
+      <line x1="880" y1="188" x2="1204" y2="188" stroke="#E8E3D6" stroke-width="1"/>
+      <line x1="880" y1="188" x2="880" y2="514" stroke="#94A3B8" stroke-width="1.5"/>
+
+      <rect x="880" y="200" width="324" height="22" rx="3" fill="#B11226"/>
+      <text x="676" y="217" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="700" fill="#23262B">使用产品数量</text>
+      <text x="872" y="217" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">product_count</text>
+      <text x="1198" y="217" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">1.3</text>
+
+      <rect x="880" y="232" width="266" height="22" rx="3" fill="#1A3C6E"/>
+      <text x="676" y="249" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">文本生成功能</text>
+      <text x="872" y="249" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">Q10 文本生成</text>
+      <text x="1198" y="249" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">3.0</text>
+
+      <rect x="880" y="264" width="236" height="22" rx="3" fill="#1A3C6E"/>
+      <text x="676" y="281" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">文心一言使用</text>
+      <text x="872" y="281" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">Q8 产品</text>
+      <text x="1198" y="281" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">4.0</text>
+
+      <rect x="880" y="296" width="170" height="22" rx="3" fill="#5B7DB1"/>
+      <text x="676" y="313" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">性别</text>
+      <text x="872" y="313" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">Q1</text>
+      <text x="1198" y="313" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">7.7</text>
+
+      <rect x="880" y="328" width="158" height="22" rx="3" fill="#5B7DB1"/>
+      <text x="676" y="345" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">ChatGPT 使用</text>
+      <text x="872" y="345" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">Q8 产品</text>
+      <text x="1198" y="345" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">8.3</text>
+
+      <rect x="880" y="360" width="144" height="22" rx="3" fill="#5B7DB1"/>
+      <text x="676" y="377" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">年级 / 文科专业</text>
+      <text x="872" y="377" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">Q4 / Q3</text>
+      <text x="1198" y="377" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">9.3</text>
+
+      <rect x="880" y="392" width="138" height="22" rx="3" fill="#5B7DB1"/>
+      <text x="676" y="409" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">学历 / 理科专业</text>
+      <text x="872" y="409" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">Q2 / Q3</text>
+      <text x="1198" y="409" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">9.7</text>
+
+      <rect x="880" y="424" width="124" height="22" rx="3" fill="#5B7DB1" fill-opacity="0.75"/>
+      <text x="676" y="441" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B">调试代码功能</text>
+      <text x="872" y="441" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">Q10 调试代码</text>
+      <text x="1198" y="441" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">10.7</text>
+
+      <text x="880" y="478" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="12" fill="#8C949D">平均排名（越小越靠前）</text>
+      <text x="1204" y="510" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="12" fill="#8C949D">数据：consensus_ranking.csv</text>
+    </g>
+  </g>
+
+  <g id="p10-insight">
+    <rect x="60" y="530" width="1160" height="120" rx="10" fill="#F3F1EC"/>
+    <use data-icon="tabler-outline/bolt" x="84" y="554" width="28" height="28" fill="#B11226" stroke-width="2"/>
+    <text x="124" y="576" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="18" font-weight="800" fill="#1A3C6E">"用得多不多"本质上是"用得广不广、用得深不深"</text>
+    <text x="124" y="610" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#56606B">使用越多不同产品、越倾向文本生成与编程调试、特定产品（文心一言 / ChatGPT）使用者，使用频率越高；</text>
+    <text x="124" y="636" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#56606B">性别与文理科背景亦有显著影响。三方法高度一致 → 结论稳健。</text>
+  </g>
+
+  <g id="p10-footer">
+    <line x1="60" y1="690" x2="1220" y2="690" stroke="#E8E3D6" stroke-width="1"/>
+    <text x="60" y="708" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">数据来源：results/factor_analysis/{consensus_ranking.csv, cross_method_comparison.png}</text>
+    <text x="1220" y="708" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">10 / 14</text>
+  </g>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A3C6E"/>
+      <stop offset="100%" stop-color="#16315A"/>
+    </linearGradient>
+    <radialGradient id="bgDecor" cx="86%" cy="14%" r="60%">
+      <stop offset="0%" stop-color="#1A3C6E" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1A3C6E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="bg-decor">
+    <rect width="1280" height="720" fill="url(#bgDecor)"/>
+    <rect x="0" y="0" width="1280" height="8" fill="#B11226"/>
+    <rect x="0" y="8" width="1280" height="2" fill="#1A3C6E"/>
+  </g>
+
+  <g id="cover-kicker">
+    <circle cx="64" cy="116" r="4.5" fill="#B11226"/>
+    <text x="80" y="121" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="700" fill="#8C949D" letter-spacing="3">PATTERN RECOGNITION · COURSE PROJECT</text>
+  </g>
+
+  <g id="cover-title">
+    <text x="60" y="290" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="62" font-weight="800" fill="#1A3C6E">
+      <tspan x="60" dy="0">大学生生成式人工智能</tspan>
+      <tspan x="60" dy="78">使用频率影响因素研究</tspan>
+    </text>
+    <rect x="62" y="392" width="84" height="6" rx="3" fill="#B11226"/>
+    <text x="60" y="448" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="24" font-weight="500" fill="#56606B">基于 <tspan font-weight="700" fill="#1A3C6E">1781 份问卷</tspan>的机器学习分类与因子分析</text>
+  </g>
+
+  <g id="cover-meta">
+    <rect x="60" y="506" width="1160" height="116" rx="12" fill="#F3F1EC"/>
+    <line x1="447" y1="524" x2="447" y2="604" stroke="#E8E3D6" stroke-width="1.5"/>
+    <line x1="834" y1="524" x2="834" y2="604" stroke="#E8E3D6" stroke-width="1.5"/>
+    <g id="meta-sample">
+      <use data-icon="tabler-outline/database" x="92" y="534" width="30" height="30" fill="#1A3C6E" stroke-width="2"/>
+      <text x="140" y="558" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="34" font-weight="800" fill="#1A3C6E">1781</text>
+      <text x="140" y="588" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">份有效问卷样本</text>
+    </g>
+    <g id="meta-feature">
+      <use data-icon="tabler-outline/stack-2" x="479" y="534" width="30" height="30" fill="#5B7DB1" stroke-width="2"/>
+      <text x="527" y="558" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="34" font-weight="800" fill="#1A3C6E">64</text>
+      <text x="527" y="588" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">个建模特征</text>
+    </g>
+    <g id="meta-class">
+      <use data-icon="tabler-outline/target" x="866" y="534" width="30" height="30" fill="#B11226" stroke-width="2"/>
+      <text x="914" y="558" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="34" font-weight="800" fill="#1A3C6E">3</text>
+      <text x="914" y="588" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">类频率标签（低 / 中 / 高）</text>
+    </g>
+  </g>
+
+  <g id="cover-footer">
+    <line x1="60" y1="668" x2="1220" y2="668" stroke="#E8E3D6" stroke-width="1"/>
+    <text x="60" y="696" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#8C949D">模式识别课程大作业</text>
+    <text x="1220" y="696" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#8C949D">2026 年 6 月</text>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="p08-header">
+    <text x="60" y="74" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="30" font-weight="800" fill="#1A3C6E">模型在中频类上稳健，低频与高频的边界识别困难</text>
+    <rect x="62" y="90" width="60" height="5" rx="2.5" fill="#B11226"/>
+  </g>
+
+  <g id="panel-perclass">
+    <text x="60" y="132" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">各类别 P / R / F1 · 分组柱状</text>
+    <rect x="60" y="142" width="700" height="372" rx="10" fill="#FAF8F3" stroke="#D4D0C4" stroke-width="1"/>
+    <image href="../images/chart_per_class.png" x="64" y="146" width="692" height="364" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+
+  <g id="panel-cm">
+    <text x="780" y="132" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">最优模型 SVM · 混淆矩阵</text>
+    <rect x="780" y="142" width="440" height="372" rx="10" fill="#FAF8F3" stroke="#D4D0C4" stroke-width="1"/>
+    <image href="../images/cm_svm.png" x="784" y="146" width="432" height="364" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+
+  <g id="diag-findings">
+    <rect x="60" y="530" width="373" height="120" rx="10" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+    <rect x="60" y="530" width="5" height="120" rx="2.5" fill="#2E7D32"/>
+    <use data-icon="tabler-outline/circle-check" x="82" y="548" width="24" height="24" fill="#2E7D32" stroke-width="2"/>
+    <text x="114" y="566" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#1A3C6E">中频类识别稳健</text>
+    <text x="82" y="598" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">中频类样本充足（73.8%），</text>
+    <text x="82" y="622" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">precision / recall 均最高。</text>
+
+    <rect x="453" y="530" width="373" height="120" rx="10" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+    <rect x="453" y="530" width="5" height="120" rx="2.5" fill="#C77700"/>
+    <use data-icon="tabler-outline/alert-triangle" x="475" y="548" width="24" height="24" fill="#C77700" stroke-width="2"/>
+    <text x="507" y="566" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#1A3C6E">两端类别难分</text>
+    <text x="475" y="598" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">低频与高频类样本稀少，</text>
+    <text x="475" y="622" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">指标明显低于中频。</text>
+
+    <rect x="846" y="530" width="374" height="120" rx="10" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+    <rect x="846" y="530" width="5" height="120" rx="2.5" fill="#5B7DB1"/>
+    <use data-icon="tabler-outline/search" x="868" y="548" width="24" height="24" fill="#5B7DB1" stroke-width="2"/>
+    <text x="900" y="566" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#1A3C6E">误判集中在相邻级</text>
+    <text x="868" y="598" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">错误多在低↔中、中↔高之间，</text>
+    <text x="868" y="622" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">罕有跨级混淆。</text>
+  </g>
+
+  <g id="p08-footer">
+    <line x1="60" y1="690" x2="1220" y2="690" stroke="#E8E3D6" stroke-width="1"/>
+    <text x="60" y="708" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">数据来源：results/model_comparison/{per_class_metrics.png, confusion_matrices/cm_svm.png}</text>
+    <text x="1220" y="708" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">08 / 14</text>
+  </g>
+</svg>

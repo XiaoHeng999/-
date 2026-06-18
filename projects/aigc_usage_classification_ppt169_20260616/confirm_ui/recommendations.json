@@ -1,0 +1,99 @@
+{
+  "lang": "zh",
+  "recommend": {
+    "canvas": "ppt169",
+    "mode": "pyramid",
+    "visual_style": "data-journalism",
+    "icons": "tabler-outline",
+    "image_usage": "provided",
+    "formula_policy": "text-only",
+    "generation_mode": "continuous"
+  },
+  "page_count": { "value": "14-16" },
+  "audience": { "value": "模式识别课程答辩老师与同学（学术研究汇报场景）" },
+  "color": {
+    "selected": 0,
+    "candidates": [
+      {
+        "name": "学术深蓝",
+        "note": "深海军蓝主色 + 琥珀强调色，纸感白底，沉稳、专业、数据可读性强——最适合学术/研究报告。",
+        "palette": {
+          "background": "#FFFFFF",
+          "secondary_bg": "#F1F4F8",
+          "primary": "#16365C",
+          "accent": "#E08A1E",
+          "secondary_accent": "#2F6DB5",
+          "body_text": "#1E2733"
+        }
+      },
+      {
+        "name": "数据青",
+        "note": "深青主色 + 珊瑚红强调，冷调中性背景，现代数据报告感，对比鲜明。",
+        "palette": {
+          "background": "#FBFCFD",
+          "secondary_bg": "#E9EFF1",
+          "primary": "#15535F",
+          "accent": "#D9544A",
+          "secondary_accent": "#3E8E9A",
+          "body_text": "#1F2A2D"
+        }
+      },
+      {
+        "name": "经典研究红蓝",
+        "note": "深蓝主色 + 研究红强调，象牙白底，传统学术答辩风，权威庄重。",
+        "palette": {
+          "background": "#FFFFFF",
+          "secondary_bg": "#F3F1EC",
+          "primary": "#1A3C6E",
+          "accent": "#B11226",
+          "secondary_accent": "#5B7DB1",
+          "body_text": "#23262B"
+        }
+      }
+    ]
+  },
+  "typography": {
+    "selected": 0,
+    "candidates": [
+      {
+        "name": "现代无衬线（一致）",
+        "note": "微软雅黑通体，靠字重对比区分标题与正文，干净现代，数据表格可读性最佳。PPT 全平台安全。",
+        "heading": {
+          "cjk": "微软雅黑",
+          "latin": "Arial",
+          "css": "\"Microsoft YaHei\",\"PingFang SC\",Arial,sans-serif",
+          "sample_cjk": "使用产品数量是最强预测因子",
+          "sample_latin": "SVM achieves best Macro F1"
+        },
+        "body": {
+          "cjk": "微软雅黑",
+          "latin": "Arial",
+          "css": "\"Microsoft YaHei\",\"PingFang SC\",Arial,sans-serif",
+          "sample_cjk": "基于1781份问卷构建三分类模型",
+          "sample_latin": "Macro F1 = 0.4988"
+        },
+        "body_size": 18
+      },
+      {
+        "name": "黑宋学术（对比）",
+        "note": "黑体标题 + 宋体正文，经典学术排版张力，标题硬朗、正文文气，适合严肃研究答辩。",
+        "heading": {
+          "cjk": "黑体",
+          "latin": "Georgia",
+          "css": "SimHei,\"Microsoft YaHei\",Georgia,sans-serif",
+          "sample_cjk": "关键影响因素共识排名",
+          "sample_latin": "Top-10 Factors (Consensus)"
+        },
+        "body": {
+          "cjk": "宋体",
+          "latin": "Georgia",
+          "css": "SimSun,Georgia,serif",
+          "sample_cjk": "三种方法交叉验证，取平均排名",
+          "sample_latin": "Macro F1 = 0.4988"
+        },
+        "body_size": 18
+      }
+    ]
+  },
+  "refine_spec": { "value": false }
+}

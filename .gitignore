@@ -45,3 +45,13 @@ uv.lock
 
 # GitHub Actions
 .github/
+
+# Node dependencies
+node_modules/
+
+# Logs and transient lock files
+*.log
+*.lock
+
+# Generated / timestamped backups
+backup/

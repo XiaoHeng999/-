@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <radialGradient id="thanksDecor" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1A3C6E" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#1A3C6E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="bg-decor">
+    <rect width="1280" height="720" fill="url(#thanksDecor)"/>
+    <rect x="0" y="0" width="1280" height="8" fill="#B11226"/>
+    <rect x="0" y="8" width="1280" height="2" fill="#1A3C6E"/>
+  </g>
+
+  <g id="thanks-hero">
+    <use data-icon="tabler-outline/mood-smile" x="596" y="180" width="88" height="88" fill="#B11226" stroke-width="2"/>
+    <text x="640" y="368" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="80" font-weight="800" fill="#1A3C6E" letter-spacing="6">谢谢聆听</text>
+    <rect x="560" y="396" width="160" height="6" rx="3" fill="#B11226"/>
+    <text x="640" y="450" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="26" font-weight="500" fill="#56606B">欢迎提问与指正</text>
+  </g>
+
+  <g id="thanks-note">
+    <rect x="340" y="500" width="600" height="84" rx="12" fill="#F3F1EC"/>
+    <use data-icon="tabler-outline/heart" x="368" y="528" width="28" height="28" fill="#B11226" stroke-width="2"/>
+    <text x="640" y="540" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="18" font-weight="700" fill="#1A3C6E">感谢老师与同学的指导与建议</text>
+    <text x="640" y="568" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">大学生生成式人工智能使用频率影响因素研究 · 模式识别课程大作业</text>
+  </g>
+
+  <g id="thanks-footer">
+    <line x1="60" y1="668" x2="1220" y2="668" stroke="#E8E3D6" stroke-width="1"/>
+    <text x="640" y="696" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#8C949D">2026 年 6 月</text>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="p07-header">
+    <text x="60" y="74" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="30" font-weight="800" fill="#1A3C6E">SVM 与 Logistic 回归并列最优，整体受低频样本稀疏拖累</text>
+    <rect x="62" y="90" width="60" height="5" rx="2.5" fill="#B11226"/>
+  </g>
+
+  <g id="panel-f1">
+    <text x="60" y="132" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">MACRO F1 对比 · 6 模型</text>
+    <rect x="60" y="142" width="560" height="316" rx="10" fill="#FAF8F3" stroke="#D4D0C4" stroke-width="1"/>
+    <image href="../images/chart_model_f1.png" x="64" y="146" width="552" height="308" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+
+  <g id="panel-cv">
+    <text x="660" y="132" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">5 折 CV 稳定性 · 箱线图</text>
+    <rect x="660" y="142" width="560" height="316" rx="10" fill="#FAF8F3" stroke="#D4D0C4" stroke-width="1"/>
+    <image href="../images/chart_cv_boxplot.png" x="664" y="146" width="552" height="308" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+
+  <g id="rank-table">
+    <rect x="60" y="476" width="1160" height="32" fill="#1A3C6E"/>
+    <text x="78" y="498" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">排名</text>
+    <text x="160" y="498" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">模型</text>
+    <text x="760" y="498" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Macro F1</text>
+    <text x="960" y="498" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">CV Mean</text>
+    <text x="1200" y="498" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="end">点评</text>
+
+    <rect x="60" y="508" width="1160" height="34" fill="#FBE9EB"/>
+    <text x="78" y="531" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="800" fill="#B11226">1</text>
+    <text x="160" y="531" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="800" fill="#B11226">SVM</text>
+    <text x="760" y="531" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="800" fill="#B11226">0.4988</text>
+    <text x="960" y="531" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">0.4860</text>
+    <text x="1200" y="531" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" font-weight="700" fill="#1A3C6E">最优</text>
+    <line x1="60" y1="542" x2="1220" y2="542" stroke="#E8E3D6" stroke-width="1"/>
+
+    <text x="78" y="565" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#56606B">2</text>
+    <text x="160" y="565" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">Logistic 回归</text>
+    <text x="760" y="565" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">0.4951</text>
+    <text x="960" y="565" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="700" fill="#2E7D32">0.5134</text>
+    <text x="1200" y="565" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">CV 均值反超</text>
+    <line x1="60" y1="576" x2="1220" y2="576" stroke="#E8E3D6" stroke-width="1"/>
+
+    <text x="78" y="599" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#56606B">3</text>
+    <text x="160" y="599" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">随机森林</text>
+    <text x="760" y="599" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">0.4761</text>
+    <text x="960" y="599" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">0.4898</text>
+    <text x="1200" y="599" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">树模型第三</text>
+    <line x1="60" y1="610" x2="1220" y2="610" stroke="#E8E3D6" stroke-width="1"/>
+
+    <text x="78" y="633" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#56606B">4–6</text>
+    <text x="160" y="633" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">朴素贝叶斯 / 决策树 / KNN</text>
+    <text x="760" y="633" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">0.41 / 0.39 / 0.36</text>
+    <text x="960" y="633" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">0.40 / 0.44 / 0.38</text>
+    <text x="1200" y="633" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">偏弱</text>
+  </g>
+
+  <g id="p07-insight">
+    <rect x="60" y="652" width="1160" height="32" rx="6" fill="#F3F1EC"/>
+    <use data-icon="tabler-outline/bulb" x="74" y="660" width="20" height="20" fill="#B11226" stroke-width="2"/>
+    <text x="104" y="673" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#23262B"><tspan font-weight="800" fill="#1A3C6E">线性模型最稳</tspan>：SVM / LR 在此数据上领先；整体 F1 偏低，主因低频组仅 <tspan font-weight="800" fill="#B11226">8.1%</tspan> 样本不足。</text>
+  </g>
+
+  <g id="p07-footer">
+    <line x1="60" y1="694" x2="1220" y2="694" stroke="#E8E3D6" stroke-width="1"/>
+    <text x="60" y="712" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">数据来源：results/model_comparison/metrics_summary.csv</text>
+    <text x="1220" y="712" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">07 / 14</text>
+  </g>
+</svg>

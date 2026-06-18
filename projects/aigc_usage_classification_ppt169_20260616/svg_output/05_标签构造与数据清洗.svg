@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="p05-header">
+    <text x="60" y="74" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="30" font-weight="800" fill="#1A3C6E">Q9 频率重编码为三分类，并剔除 6 类泄漏与噪声列</text>
+    <rect x="62" y="90" width="60" height="5" rx="2.5" fill="#B11226"/>
+  </g>
+
+  <g id="label-panel">
+    <text x="60" y="146" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">① 标签构造 · Q9 → 三分类</text>
+    <rect x="60" y="164" width="560" height="40" fill="#F3F1EC"/>
+    <text x="78" y="189" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#56606B">原始编码 · 含义</text>
+    <text x="608" y="189" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#56606B">重编码分组</text>
+
+    <rect x="60" y="204" width="6" height="76" rx="3" fill="#B11226"/>
+    <text x="80" y="234" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#23262B">编码 1 · 从未使用</text>
+    <text x="80" y="260" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#8C949D">145 人 · 8.1%</text>
+    <rect x="470" y="222" width="138" height="40" rx="20" fill="#FBE9EB"/>
+    <text x="539" y="248" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="17" font-weight="800" fill="#B11226">低频</text>
+
+    <rect x="60" y="290" width="6" height="76" rx="3" fill="#1A3C6E"/>
+    <text x="80" y="320" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#23262B">编码 2 · 一周 1～10 次</text>
+    <text x="80" y="346" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#8C949D">1315 人 · 73.8%</text>
+    <rect x="470" y="308" width="138" height="40" rx="20" fill="#E7EDF5"/>
+    <text x="539" y="334" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="17" font-weight="800" fill="#1A3C6E">中频</text>
+
+    <rect x="60" y="376" width="6" height="76" rx="3" fill="#5B7DB1"/>
+    <text x="80" y="406" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#23262B">编码 3～6 · 一周 11 次以上</text>
+    <text x="80" y="432" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#8C949D">321 人 · 18.0%</text>
+    <rect x="470" y="394" width="138" height="40" rx="20" fill="#EAF1F6"/>
+    <text x="539" y="420" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="17" font-weight="800" fill="#5B7DB1">高频</text>
+
+    <use data-icon="tabler-outline/tags" x="60" y="476" width="26" height="26" fill="#1A3C6E" stroke-width="2"/>
+    <text x="96" y="496" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" fill="#23262B">相邻频率级合并，<tspan font-weight="800" fill="#1A3C6E">高频</tspan>纳入所有"一周 11 次以上"档位</text>
+  </g>
+
+  <line x1="652" y1="146" x2="652" y2="650" stroke="#E8E3D6" stroke-width="1.5"/>
+
+  <g id="clean-panel">
+    <text x="680" y="146" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="2">② 数据清洗 · 剔除泄漏与噪声列</text>
+    <use data-icon="tabler-outline/filter" x="680" y="166" width="24" height="24" fill="#C77700" stroke-width="2"/>
+    <text x="712" y="185" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="14" fill="#56606B">共剔除 8 类列，确保标签不泄漏、消除冗余与噪声</text>
+
+    <rect x="680" y="204" width="540" height="62" rx="8" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+    <rect x="680" y="204" width="5" height="62" rx="2.5" fill="#B11226"/>
+    <text x="700" y="230" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="700" fill="#23262B">Q15 总体情况 / 总分</text>
+    <text x="700" y="252" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#C77700">目标泄漏：与频率 r = 0.235，量表总分高度相关</text>
+
+    <rect x="680" y="276" width="540" height="62" rx="8" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+    <rect x="680" y="276" width="5" height="62" rx="2.5" fill="#C77700"/>
+    <text x="700" y="302" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="700" fill="#23262B">Q16 该不该使用</text>
+    <text x="700" y="324" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">近零方差：95.9% 选"应该"，无区分度</text>
+
+    <rect x="680" y="348" width="540" height="62" rx="8" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+    <rect x="680" y="348" width="5" height="62" rx="2.5" fill="#5B7DB1"/>
+    <text x="700" y="374" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="700" fill="#23262B">Q14 注意力检测题</text>
+    <text x="700" y="396" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">34.9% 未通过，质量筛除</text>
+
+    <rect x="680" y="420" width="540" height="62" rx="8" fill="#FFFFFF" stroke="#D4D0C4" stroke-width="1"/>
+    <rect x="680" y="420" width="5" height="62" rx="2.5" fill="#8C949D"/>
+    <text x="700" y="446" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="700" fill="#23262B">学校 / 所用时间 / 序号 / Q17 Q18</text>
+    <text x="700" y="468" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#8C949D">共线、元数据、无意义、开放文本</text>
+
+    <rect x="680" y="502" width="540" height="68" rx="10" fill="#F3F1EC"/>
+    <use data-icon="tabler-outline/circle-check" x="700" y="522" width="24" height="24" fill="#2E7D32" stroke-width="2"/>
+    <text x="734" y="540" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="15" font-weight="700" fill="#1A3C6E">清洗后进入建模：约 64 个特征</text>
+    <text x="734" y="560" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" fill="#56606B">防泄漏 + 去冗余 + 质量筛除三原则并行</text>
+  </g>
+
+  <g id="p05-footer">
+    <line x1="60" y1="690" x2="1220" y2="690" stroke="#E8E3D6" stroke-width="1"/>
+    <text x="60" y="708" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">说明：标签重编码与列剔除均在数据预处理阶段完成，写入可复现 Pipeline</text>
+    <text x="1220" y="708" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">05 / 14</text>
+  </g>
+</svg>

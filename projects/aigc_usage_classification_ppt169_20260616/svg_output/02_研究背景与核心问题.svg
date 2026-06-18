@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="p02-header">
+    <text x="60" y="74" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="30" font-weight="800" fill="#1A3C6E">生成式AI正深度渗透校园，使用频率出现明显分化</text>
+    <rect x="62" y="90" width="60" height="5" rx="2.5" fill="#B11226"/>
+  </g>
+
+  <g id="hero-question">
+    <text x="60" y="188" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="13" font-weight="700" fill="#B11226" letter-spacing="3">CORE RESEARCH QUESTION · 核心研究问题</text>
+    <use data-icon="tabler-outline/sparkles" x="60" y="216" width="40" height="40" fill="#B11226" stroke-width="2"/>
+    <text x="60" y="356" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="46" font-weight="800" fill="#1A3C6E">
+      <tspan x="60" dy="0">哪些因素，</tspan>
+      <tspan x="60" dy="64">决定了大学生</tspan>
+      <tspan x="60" dy="64">使用生成式AI的</tspan>
+      <tspan x="60" dy="64"><tspan fill="#B11226">频率高低</tspan>？</tspan>
+    </text>
+  </g>
+
+  <line x1="680" y1="170" x2="680" y2="640" stroke="#E8E3D6" stroke-width="1.5"/>
+
+  <g id="ctx-background">
+    <use data-icon="tabler-outline/robot" x="720" y="178" width="28" height="28" fill="#1A3C6E" stroke-width="2"/>
+    <text x="760" y="200" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#1A3C6E" letter-spacing="1">背景</text>
+    <text x="720" y="240" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="19" fill="#23262B">
+      <tspan x="720" dy="0">生成式人工智能（AIGC）正在快速渗透</tspan>
+      <tspan x="720" dy="30">大学生的学习和生活，使用频率因人而异，</tspan>
+      <tspan x="720" dy="30">出现明显的群体分化。</tspan>
+    </text>
+  </g>
+  <line x1="720" y1="348" x2="1220" y2="348" stroke="#E8E3D6" stroke-width="1"/>
+
+  <g id="ctx-data">
+    <use data-icon="tabler-outline/database" x="720" y="372" width="28" height="28" fill="#5B7DB1" stroke-width="2"/>
+    <text x="760" y="394" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#1A3C6E" letter-spacing="1">数据基础</text>
+    <text x="720" y="434" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="19" fill="#23262B">
+      <tspan x="720" dy="0">基于 <tspan font-weight="800" fill="#1A3C6E">1781 份</tspan>大学生生成式AI使用情况</tspan>
+      <tspan x="720" dy="30">问卷，覆盖人口统计、功能偏好、四大</tspan>
+      <tspan x="720" dy="30">场景量表等多元维度。</tspan>
+    </text>
+  </g>
+  <line x1="720" y1="546" x2="1220" y2="546" stroke="#E8E3D6" stroke-width="1"/>
+
+  <g id="ctx-method">
+    <use data-icon="tabler-outline/flask" x="720" y="570" width="28" height="28" fill="#B11226" stroke-width="2"/>
+    <text x="760" y="592" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="16" font-weight="700" fill="#1A3C6E" letter-spacing="1">研究路径</text>
+    <text x="720" y="632" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="19" fill="#23262B">
+      <tspan x="720" dy="0">以机器学习分类模型量化各因素的</tspan>
+      <tspan x="720" dy="30">影响力，用数据回答"为什么"。</tspan>
+    </text>
+  </g>
+
+  <g id="p02-footer">
+    <line x1="60" y1="690" x2="1220" y2="690" stroke="#E8E3D6" stroke-width="1"/>
+    <text x="60" y="708" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">数据来源：大学生生成式人工智能使用情况问卷（N = 1781）</text>
+    <text x="1220" y="708" text-anchor="end" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" font-size="11" fill="#8C949D">02 / 14</text>
+  </g>
+</svg>

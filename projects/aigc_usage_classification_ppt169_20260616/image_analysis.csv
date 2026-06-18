@@ -1,0 +1,16 @@
+No,Filename,Width,Height,AspectRatio,PixelAspectRatio,RatioSource,UsageCount,DisplayRatioVariants,AssetKind,SvgRenderable,PptxNativeSupported,SizeKB,Category,ImageArea_SxS,TextArea_SxS
+1,chart_cv_boxplot.png,1979,1181,1.68,1.68,pixel,1,,bitmap,True,True,58.4,Wide landscape,812x485,328x600
+2,chart_model_f1.png,1982,1176,1.69,1.69,pixel,1,,bitmap,True,True,61.4,Wide landscape,812x482,328x600
+3,chart_per_class.png,4179,1230,3.40,3.40,pixel,1,,bitmap,True,True,169.9,Ultra-wide,1160x341,1160x239
+4,cm_rf.png,1309,1177,1.11,1.11,pixel,1,,bitmap,True,True,50.2,Near square,667x600,473x600
+5,cm_svm.png,1309,1177,1.11,1.11,pixel,1,,bitmap,True,True,55.3,Near square,667x600,473x600
+6,factor_cross_method.png,2356,1328,1.77,1.77,pixel,1,,bitmap,True,True,132.0,Wide landscape,812x458,328x600
+7,factor_permutation.png,2009,1180,1.70,1.70,pixel,1,,bitmap,True,True,142.7,Wide landscape,812x477,328x600
+8,factor_rf.png,2009,1179,1.70,1.70,pixel,1,,bitmap,True,True,149.3,Wide landscape,812x477,328x600
+9,factor_shap_beeswarm.png,1996,1181,1.69,1.69,pixel,1,,bitmap,True,True,366.7,Wide landscape,812x480,328x600
+10,factor_shap_summary.png,2379,1329,1.79,1.79,pixel,1,,bitmap,True,True,141.9,Wide landscape,812x454,328x600
+11,heatmap_C_vs_gamma.png,1487,1180,1.26,1.26,pixel,1,,bitmap,True,True,57.9,Standard landscape,756x600,384x600
+12,heatmap_n_estimators_vs_max_depth.png,1503,1180,1.27,1.27,pixel,1,,bitmap,True,True,57.4,Standard landscape,764x600,376x600
+13,line_C.png,1579,979,1.61,1.61,pixel,1,,bitmap,True,True,60.5,Wide landscape,812x503,328x600
+14,line_n_estimators.png,1579,979,1.61,1.61,pixel,1,,bitmap,True,True,69.6,Wide landscape,812x503,328x600
+15,pca_scatter.png,1977,1579,1.25,1.25,pixel,1,,bitmap,True,True,373.5,Standard landscape,751x600,389x600
